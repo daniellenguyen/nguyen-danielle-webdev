@@ -1,8 +1,3 @@
-# default running instructions
-1. mongod
-1. node server.js
-1. browse to localhost:3000
-
 # About Me
 Hi! My name is Danielle and I'm an undergrad in my fourth year at NEU. I just came back from my second co-op, and I am interested in Data Vis. The purpose of this repo is to create a website for easily searching for local animals to adopt. 
 
@@ -13,3 +8,6 @@ https://nguyen-danielle-webdev.herokuapp.com/
 https://nguyen-danielle-webdev.herokuapp.com/project/index.html
 3. This is the link to my assignment:
 https://nguyen-danielle-webdev.herokuapp.com/assignment/
+
+# Misc Running Instructions
+1. To push to heroku, do: git push heroku master
