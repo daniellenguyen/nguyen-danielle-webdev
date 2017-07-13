@@ -1,5 +1,5 @@
 # About Me
-Hi! My name is Danielle and I'm an undergrad in my fourth year at NEU. I just came back from my second co-op, and I am interested in Data Vis. The purpose of this repo is to create a website for easily searching for local animals to adopt. 
+Hi! My name is Danielle and I'm an undergrad in my fourth year at NEU. I just came back from my second co-op, and I am interested in Data Vis. This repo will be a website for searching local animals to adopt. 
 
 # Relevant Links
 1. This is the root to the hosted environment on Heroku:
