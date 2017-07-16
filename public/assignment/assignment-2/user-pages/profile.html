@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Profile
+  </title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+  <style>
+    .form-control {
+      margin-top: 3px;
+      margin-bottom: 15px;
+      font-weight: normal;
+      color: black;
+    }
+
+    .container {
+      margin-top: 70px;
+      font-weight: bold;
+    }
+
+    .navbar-brand {
+      color: white;
+      font-weight: bold;
+    }
+
+    .navbar {
+      background-color: #337ab7;
+      border: none;
+    }
+
+    .glyphicon {
+      color: white;
+    }
+
+    .navbar-text {
+      margin-right: 20px;
+    }
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-fixed-top">
+  <a class="navbar-brand" href="#">Profile</a>
+  <div class="navbar-text pull-right">
+    <a href="#">
+      <span class="glyphicon glyphicon-ok"></span>
+    </a>
+  </div>
+</nav>
+<div class="container">
+  <form action="profile.html">
+    Username
+    <input type="text"
+           class="form-control"
+           placeholder="username"/>
+    Email
+    <input type="text"
+           class="form-control"
+           placeholder="myemail@email.com"/>
+    First Name
+    <input type="text"
+           class="form-control"
+           placeholder="John"/>
+    Last Name
+    <input type="text"
+           class="form-control"
+           placeholder="Doe"/>
+    <button type="button"
+            class="btn btn-primary btn-block">
+      Websites
+    </button>
+    <button type="button"
+            class="btn btn-danger btn-block">
+      Log Out
+    </button>
+  </form>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <a href="#" class="navbar-text pull-right">
+    <span class="glyphicon glyphicon-user"></span>
+  </a>
+</nav>
+</body>
+</html>
