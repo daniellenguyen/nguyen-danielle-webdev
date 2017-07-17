@@ -1,10 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+  <title>
+    Websites
+  </title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+  <style>
+    .navbar-brand {
+      color: white;
+      font-weight: bold;
+    }
+
+    .navbar {
+      background-color: #337ab7;
+      border: none;
+    }
+
+    .navbar-text {
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+
+    .glyphicon {
+      color: white;
+    }
+
+    .glyphicon-cog {
+      margin-right: 5px;
+      color: #337ab7;
+    }
+
+    .hidden-xs {
+      border-right: 1px solid #337ab7;
+      padding-bottom: 100%;
+      margin-bottom: -100%;
+    }
+
+    .row {
+      margin-top: 60px;
+      color: #337ab7;
+      margin-bottom: 15px;
+      border: none;
+    }
+
+    .list-group-item {
+      border: none;
+      margin-left: 17px;
+    }
+
+    .new-pg-text {
+      color: black;
+      font-weight:bold;
+      margin-right: 30px;
+      margin-left: 15px;
+    }
+
+    .form-control {
+      margin-top: 3px;
+      margin-bottom: 15px;
+      font-weight: normal;
+      color: black;
+    }
+
+  </style>
 </head>
 <body>
-
+<div class="row container-fluid">
+  <div class="col-sm-4 hidden-xs">
+    <ul class="list-group">
+      <li class="list-group-item">Address Book App
+        <a href="#">
+          <span class="glyphicon glyphicon-cog pull-right"></span>
+        </a>
+      </li>
+      <li class="list-group-item">Blogger
+        <a href="#">
+          <span class="glyphicon glyphicon-cog pull-right"></span>
+        </a>
+      </li>
+      <li class="list-group-item">Blogging App
+        <a href="#">
+          <span class="glyphicon glyphicon-cog pull-right"></span>
+        </a>
+      </li>
+      <li class="list-group-item">Script Testing App
+        <a href="#">
+          <span class="glyphicon glyphicon-cog pull-right"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-8">
+    <form class='new-pg-text' action="profile.html">
+      Name
+      <input type="text"
+             class="form-control"
+             placeholder="Name"/>
+      Description
+      <textarea type="text"
+                class="form-control description"
+                placeholder="Description"
+                rows="5"></textarea>
+    </form>
+  </div>
+</div>
+<nav class="navbar navbar-fixed-top">
+    <div class="col-sm-4 hidden-xs">
+      <div class="navbar-text pull-left">
+        <a href="#">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+      <a class="navbar-brand pull-left"
+         href="#">Websites</a>
+      <div class="navbar-text pull-right">
+        <a href="#">
+      <span class="glyphicon glyphicon-plus">
+      </span>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <a class="navbar-brand pull-left"
+         href="#">New Website</a>
+      <div class="navbar-text pull-right">
+        <a href="#">
+      <span class="glyphicon glyphicon-ok">
+      </span>
+        </a>
+      </div>
+    </div>
+</nav>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <a href="#" class="navbar-text pull-right">
+    <span class="glyphicon glyphicon-user"></span>
+  </a>
+</nav>
 </body>
 </html>
