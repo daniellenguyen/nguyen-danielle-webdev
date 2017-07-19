@@ -1,0 +1,39 @@
+body {
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+
+.navbar-brand {
+  color: white;
+  font-weight: bold;
+}
+
+.navbar {
+  background-color: #337ab7;
+  border: none;
+}
+
+.navbar-text {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.glyphicon {
+  color: white;
+}
+
+.glyphicon-cog {
+  margin-right: 5px;
+  color: #337ab7;
+}
+
+.row {
+  margin-top: 70px;
+  color: #337ab7;
+  margin-bottom: 15px;
+  border: none;
+}
+.list-group-item {
+  border: none;
+  margin-left: 17px;
+}
