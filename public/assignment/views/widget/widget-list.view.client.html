@@ -1,29 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>
-    Websites
-  </title>
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel = "stylesheet"
-        type = "text/css"
-        href = "widget-list.css" />
-</head>
-<body>
 <nav class="navbar navbar-fixed-top">
   <div class="navbar-text pull-left">
-    <a href="../page-pages/page-list.html">
+    <a href="#!/user/:uid/website/:wid/page">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
   </div>
   <a class="navbar-brand"
      href="#">Widgets</a>
   <div class="navbar-text pull-right">
-    <a href="widget-choose.html">
+    <a href="#!/user/:uid/website/:wid/page/:pid/widget/new">
       <span class="glyphicon glyphicon-plus">
       </span>
     </a>
@@ -32,28 +16,28 @@
 <div class="row container-fluid content">
   <div class="list-group">
     <div class="list-group-item">
-      <a href=widget-heading.html>
+      <a href=#!/user/:uid/website/:wid/page/:pid/widget/heading>
         <span class="glyphicon glyphicon-cog pull-right"></span>
       </a>
       <span class="glyphicon glyphicon-align-justify pull-right"></span>
       <h1>Society for The Betterment of Squirrels Newsletter</h1>
     </div>
     <div class="list-group-item">
-      <a href=widget-heading.html>
+      <a href=#!/user/:uid/website/:wid/page/:pid/widget/heading>
       <span class="glyphicon glyphicon-cog pull-right"></span>
       </a>
       <span class="glyphicon glyphicon-align-justify pull-right"></span>
       <h2>Bunnies</h2>
     </div>
     <div class="list-group-item image">
-      <a href=widget-image.html>
+      <a href=#!/user/:uid/website/:wid/page/:pid/widget/image>
       <span class="glyphicon glyphicon-cog pull-right"></span>
       </a>
       <span class="glyphicon glyphicon-align-justify pull-right"></span>
       <img class="image" src="bunny.jpg">
     </div>
     <div class="list-group-item">
-      <a href=widget-heading.html>
+      <a href=#!/user/:uid/website/:wid/page/:pid/widget/heading>
       <span class="glyphicon glyphicon-cog pull-right"></span>
       </a>
       <span class="glyphicon glyphicon-align-justify pull-right"></span>
@@ -64,7 +48,7 @@
       </p>
     </div>
     <div class="list-group-item">
-      <a href=widget-youtube.html>
+      <a href=#!/user/:uid/website/:wid/page/:pid/widget/youtube>
       <span class="glyphicon glyphicon-cog pull-right"></span>
       </a>
       <span class="glyphicon glyphicon-align-justify pull-right"></span>
@@ -77,7 +61,7 @@
       </div>
     </div>
     <div class="list-group-item">
-      <a href=widget-heading.html>
+      <a href=#!/user/:uid/website/:wid/page/:pid/widget/heading>
       <span class="glyphicon glyphicon-cog pull-right"></span>
       </a>
       <span class="glyphicon glyphicon-align-justify pull-right"></span>
@@ -92,7 +76,7 @@
   </div>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
-  <a href="../user-pages/profile.html"
+  <a href="/user/:uid"
      class="navbar-text pull-right">
     <span class="glyphicon glyphicon-user"></span>
   </a>
@@ -103,5 +87,3 @@
     <span class="glyphicon glyphicon-eye-open pull-left"></span>
   </a>
 </nav>
-</body>
-</html>

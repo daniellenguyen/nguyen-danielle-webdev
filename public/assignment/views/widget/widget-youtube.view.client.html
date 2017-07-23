@@ -1,35 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>
-    Widgets
-  </title>
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel = "stylesheet"
-        type = "text/css"
-        href = "widget-youtube.css" />
-</head>
-<body>
 <nav class="navbar navbar-fixed-top">
   <div class="navbar-text pull-left">
-    <a href="widget-list.html">
+    <a href="#!/user/:uid/website/:wid/page/:pid/widget">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
   </div>
   <a class="navbar-brand"
      href="#">Widget Edit</a>
   <div class="navbar-text pull-right">
-    <a href="widget-list.html">
+    <a href="#!/user/:uid/website/:wid/page/:pid/widget">
       <span class="glyphicon glyphicon-ok"></span>
     </a>
   </div>
 </nav>
 <div class="container">
-  <form action="profile.html">
+  <form>
     Name
     <input type="text"
            class="form-control"
@@ -46,7 +30,7 @@
     <input type="number"
            class="form-control"
     placeholder="0"/>
-    <a href=widget-list.html
+    <a href=#!/user/:uid/website/:wid/page/:pid/widget
        type="button"
        class="btn btn-danger btn-block">
       Delete
@@ -54,9 +38,8 @@
   </form>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
-  <a href="#" class="navbar-text pull-right">
+  <a href="#"
+     class="navbar-text pull-right">
     <span class="glyphicon glyphicon-user"></span>
   </a>
 </nav>
-</body>
-</html>
