@@ -24,14 +24,16 @@
     </ul>
   </div>
   <div class="col-sm-8">
-    <form class='new-pg-text' action="profile.html">
+    <form class='new-pg-text'>
       Name
       <input type="text"
              class="form-control"
+             ng-model="model.user.name"
              placeholder="Name"/>
       Description
       <textarea type="text"
                 class="form-control description"
+                ng-model="model.user.description"
                 placeholder="Description"
                 rows="5"></textarea>
     </form>

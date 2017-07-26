@@ -3,6 +3,10 @@ body {
   padding-bottom: 50px;
 }
 
+h1 {
+  text-align: left;
+}
+
 .form-control {
   margin-bottom: 5px;
 }

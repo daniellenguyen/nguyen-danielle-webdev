@@ -11,25 +11,29 @@
     Username
     <input type="text"
            class="form-control"
+           ng-model="model.user.username"
            placeholder="username"/>
     Email
     <input type="email"
            class="form-control"
+           ng-model="email"
            placeholder="myemail@email.com"/>
     First Name
     <input type="text"
            class="form-control"
+           ng-model="model.user.firstName"
            placeholder="John"/>
     Last Name
     <input type="text"
            class="form-control"
+           ng-model="model.user.lastName"
            placeholder="Doe"/>
-    <a href=#!/user/:uid/website
+    <a ng-click="model.toWebsites()"
        type="button"
        class="btn btn-primary btn-block">
       Websites
     </a>
-    <a href=#!/login
+    <a ng-click="model.toLogin()"
        type="button"
        class="btn btn-danger btn-block">
       Log Out

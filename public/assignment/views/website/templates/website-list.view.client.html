@@ -15,26 +15,13 @@
 </nav>
 <div class="row container-fluid">
   <ul class="list-group">
+    <div ng-repeat="website in model.websites">
     <li class="list-group-item">Address Book App
-      <a href="#!/user/:uid/website/:wid">
+      <a href="#!/user/{{model.userId}}/website/{{website._id}}">{{website.name}}
         <span class="glyphicon glyphicon-cog pull-right"></span>
       </a>
     </li>
-    <li class="list-group-item">Blogger
-      <a href="#!/user/:uid/website/:wid">
-        <span class="glyphicon glyphicon-cog pull-right"></span>
-      </a>
-    </li>
-    <li class="list-group-item">Blogging App
-      <a href="#!/user/:uid/website/:wid">
-        <span class="glyphicon glyphicon-cog pull-right"></span>
-      </a>
-    </li>
-    <li class="list-group-item">Script Testing App
-      <a href="#!/user/:uid/website/:wid">
-        <span class="glyphicon glyphicon-cog pull-right"></span>
-      </a>
-    </li>
+    </div>
   </ul>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">

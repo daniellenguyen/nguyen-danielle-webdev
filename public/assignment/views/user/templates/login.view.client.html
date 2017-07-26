@@ -1,0 +1,23 @@
+<div class="container" ng-controller="LoginController">
+  <h1 id="login">Login</h1>
+  <form>
+    <input type="text"
+           class="form-control"
+           ng-model="username"
+           placeholder="username"/>
+    <input type="password"
+           class="form-control"
+           ng-model="password"
+           placeholder="password"/>
+    <a ng-click="model.login(username, password)"
+       type="button"
+       class="btn btn-primary btn-block">
+      Login
+    </a>
+    <a ng-click="model.toRegister()"
+        type="button"
+       class="btn btn-success btn-block">
+      Register
+    </a>
+  </form>
+</div>
