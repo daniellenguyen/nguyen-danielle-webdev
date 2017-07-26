@@ -1,0 +1,47 @@
+<nav class="navbar navbar-fixed-top">
+  <a class="navbar-brand" href="#">Profile</a>
+  <div class="navbar-text pull-right">
+    <a href="#">
+      <span class="glyphicon glyphicon-ok"></span>
+    </a>
+  </div>
+</nav>
+<div class="container">
+  <form action="profile.view.client.html">
+    Username
+    <input type="text"
+           class="form-control"
+           ng-model="model.user.username"
+           placeholder="username"/>
+    Email
+    <input type="email"
+           class="form-control"
+           ng-model="email"
+           placeholder="myemail@email.com"/>
+    First Name
+    <input type="text"
+           class="form-control"
+           ng-model="model.user.firstName"
+           placeholder="John"/>
+    Last Name
+    <input type="text"
+           class="form-control"
+           ng-model="model.user.lastName"
+           placeholder="Doe"/>
+    <a ng-click="model.toWebsites()"
+       type="button"
+       class="btn btn-primary btn-block">
+      Websites
+    </a>
+    <a ng-click="model.toLogin()"
+       type="button"
+       class="btn btn-danger btn-block">
+      Log Out
+    </a>
+  </form>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <a href="#" class="navbar-text pull-right">
+    <span class="glyphicon glyphicon-user"></span>
+  </a>
+</nav>

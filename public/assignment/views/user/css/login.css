@@ -1,0 +1,16 @@
+body {
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+
+h1 {
+  text-align: left;
+}
+
+.form-control {
+  margin-bottom: 5px;
+}
+
+.container {
+  margin-top: 50px;
+}
