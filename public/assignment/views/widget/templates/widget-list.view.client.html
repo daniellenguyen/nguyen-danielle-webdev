@@ -1,13 +1,13 @@
 <nav class="navbar navbar-fixed-top">
   <div class="navbar-text pull-left">
-    <a href="#!/user/:uid/website/:wid/page">
+    <a ng-click="model.toPageList()">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
   </div>
   <a class="navbar-brand"
      href="#">Widgets</a>
   <div class="navbar-text pull-right">
-    <a href="#!/user/:uid/website/:wid/page/:pid/widget/new">
+    <a ng-click="model.toNewWidget()">
       <span class="glyphicon glyphicon-plus">
       </span>
     </a>
@@ -15,68 +15,23 @@
 </nav>
 <div class="row container-fluid content">
   <div class="list-group">
-    <div class="list-group-item">
-      <a href=#!/user/:uid/website/:wid/page/:pid/widget/heading>
-        <span class="glyphicon glyphicon-cog pull-right"></span>
-      </a>
-      <span class="glyphicon glyphicon-align-justify pull-right"></span>
-      <h1>Society for The Betterment of Squirrels Newsletter</h1>
-    </div>
-    <div class="list-group-item">
-      <a href=#!/user/:uid/website/:wid/page/:pid/widget/heading>
-      <span class="glyphicon glyphicon-cog pull-right"></span>
-      </a>
-      <span class="glyphicon glyphicon-align-justify pull-right"></span>
-      <h2>Bunnies</h2>
-    </div>
-    <div class="list-group-item image">
-      <a href=#!/user/:uid/website/:wid/page/:pid/widget/image>
-      <span class="glyphicon glyphicon-cog pull-right"></span>
-      </a>
-      <span class="glyphicon glyphicon-align-justify pull-right"></span>
-      <img class="image" src="bunny.jpg">
-    </div>
-    <div class="list-group-item">
-      <a href=#!/user/:uid/website/:wid/page/:pid/widget/heading>
-      <span class="glyphicon glyphicon-cog pull-right"></span>
-      </a>
-      <span class="glyphicon glyphicon-align-justify pull-right"></span>
-      <p class="content"
-         align="justify">
-        This is what a bunny looks like. Bunnies are the enemy of the republic. They oppress the
-        proletariat. Down with bunnies!!!!
-      </p>
-    </div>
-    <div class="list-group-item">
-      <a href=#!/user/:uid/website/:wid/page/:pid/widget/youtube>
-      <span class="glyphicon glyphicon-cog pull-right"></span>
-      </a>
-      <span class="glyphicon glyphicon-align-justify pull-right"></span>
-      <div class="embed-responsive embed-responsive-4by3 content">
-        <iframe
-            src="https://www.youtube.com/embed/QiT37yZzq_M"
-            frameborder="0"
-            allowfullscreen>
-        </iframe>
+    <div ng-repeat="widget in model.widgets">
+      <div ng-switch="widget.widgetType">
+        <div ng-switch-when="HEADING">
+          <div ng-include src="'views/widget/templates/widget-heading.view.client.html'"></div>
+        </div>
+        <div ng-switch-when="IMAGE">
+          <div ng-include src="'views/widget/templates/widget-image.view.client.html'"></div>
+        </div>
+        <div ng-switch-when="YOUTUBE">
+          <div ng-include src="'views/widget/templates/widget-youtube.view.client.html'"></div>
+        </div>
       </div>
-    </div>
-    <div class="list-group-item">
-      <a href=#!/user/:uid/website/:wid/page/:pid/widget/heading>
-      <span class="glyphicon glyphicon-cog pull-right"></span>
-      </a>
-      <span class="glyphicon glyphicon-align-justify pull-right"></span>
-      <p class="content"
-         align="justify">
-        This is a video of someone playing Ave Maria on the otomatone, an instrument
-        recently invented in Japan. The sound of the otomatone is especially humanlike, which renders
-        it capable of expressing vivid emotion with little effort. This can be observed in the video above
-        - I'll admit I laughed out loud at this when I watched it the first time.
-      </p>
     </div>
   </div>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
-  <a href="/user/:uid"
+  <a ng-click="model.toProfile()"
      class="navbar-text pull-right">
     <span class="glyphicon glyphicon-user"></span>
   </a>

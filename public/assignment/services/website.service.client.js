@@ -32,7 +32,7 @@
       var websiteList = [];
       for(var i = 0; i < websites.length; i++) {
         if (websites[i].developerId === userId) {
-          return websiteList.push(websites[i]);
+          websiteList.push(websites[i]);
         }
       }
       return websiteList;
@@ -41,7 +41,7 @@
     function findWebsiteById(websiteId) {
       for(var i = 0; i < websites.length; i++) {
         if(websites[i]._id === websiteId) {
-          return websites[i];
+          return angular.copy(websites[i]);
         }
       }
     }

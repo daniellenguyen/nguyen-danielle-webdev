@@ -1,7 +1,7 @@
 <nav class="navbar navbar-fixed-top">
   <div class="col-sm-4 hidden-xs">
     <div class="navbar-text pull-left">
-      <a href="#!/user/:uid/website/:wid/page">
+      <a ng-click="model.toPageList()">
         <span class="glyphicon glyphicon-chevron-left"></span>
       </a>
     </div>
@@ -15,14 +15,14 @@
     </div>
   </div>
   <div class="col-sm-8">
-    <a href="#!/user/:uid/website/:wid/page"
+    <a ng-click="model.toPageList()"
        class="navbar-text hidden-sm hidden-md hidden-lg hidden-xl pull-left">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
     <a class="navbar-brand pull-left"
        href="#">New Page</a>
     <div class="navbar-text pull-right">
-      <a href="#!/user/:uid/website/:wid/page">
+      <a ng-click="model.updatePage()">
       <span class="glyphicon glyphicon-ok">
       </span>
       </a>
@@ -75,7 +75,7 @@
   </div>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
-  <a href="#!/user/:uid"
+  <a ng-click="model.toProfile()"
      class="navbar-text pull-right">
     <span class="glyphicon glyphicon-user"></span>
   </a>

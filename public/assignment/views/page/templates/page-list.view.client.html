@@ -1,13 +1,12 @@
 <nav class="navbar navbar-fixed-top">
   <div class="navbar-text pull-left">
-    <a href="#!/user/:uid/website">
+    <a ng-click="model.toWebsiteList()">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
   </div>
-  <a class="navbar-brand"
-     href="#!/user/:uid/website/:wid/page/:pid/widget">Pages</a>
+  <a class="navbar-brand">Pages</a>
   <div class="navbar-text pull-right">
-    <a href="#!/user/:uid/website/:wid/page/new">
+    <a ng-click="model.toNewPage()">
       <span class="glyphicon glyphicon-plus">
       </span>
     </a>
@@ -15,17 +14,17 @@
 </nav>
 <div class="row container-fluid">
   <ul class="list-group">
-    <div ng-repeat="page in model.pages">
-    <li class="list-group-item">{{page.name}}
-      <a href="#!/user/{{model.userId}}/website/{{page.websiteId}}/page/{{page._id}}">
+    <li class="list-group-item"
+        ng-repeat="page in model.pages"
+        ng-click="model.toWidgetList(page._id)">{{page.name}}
+      <a ng-click="model.toEditPage(page._id)">
         <span class="glyphicon glyphicon-cog pull-right"></span>
       </a>
     </li>
-    </div>
   </ul>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
-  <a href="#!/user/{{model.userId}}"
+  <a ng-click="model.toProfile()"
      class="navbar-text pull-right">
     <span class="glyphicon glyphicon-user"></span>
   </a>

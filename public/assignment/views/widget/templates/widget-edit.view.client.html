@@ -1,1 +1,12 @@
 <!--//TODO <input ng-model="model.widget.username" class="form-control" type="text"/>-->
+<div ng-switch="widget.widgetType">
+  <div ng-switch-when="HEADING">
+    <ng-include src="'views/widget/templates/widget-heading.view.client.html'">
+  </div>
+  <div ng-switch-when="IMAGE">
+    <ng-include src="'views/widget/templates/widget-image.view.client.html'">
+  </div>
+  <div ng-switch-when="YOUTUBE">
+    <ng-include src="'views/widget/templates/widget-youtube.view.client.html'">
+  </div>
+</div>
