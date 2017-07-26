@@ -1,6 +1,6 @@
 <nav class="navbar navbar-fixed-top">
   <div class="navbar-text pull-left">
-    <a href="#!/user/:uid/website/:wid/page/:pid/widget">
+    <a ng-click="model.toWidgetList()">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
   </div>
@@ -10,7 +10,7 @@
 </nav>
 <div class="row container-fluid">
   <ul class="list-group">
-    <a href=#!/user/:uid/website/:wid/page/:pid/widget/heading>
+    <a ng-click="model.toEditWidget()">
       <li class="list-group-item">Header
       </li>
     </a>
@@ -34,11 +34,11 @@
     <li class="list-group-item">Button
     </li>
     </a>
-    <a href=#!/user/:uid/website/:wid/page/:pid/widget/image>
+    <a ng-click="model.toEditWidget()">
     <li class="list-group-item">Image
     </li>
     </a>
-    <a href=#!/user/:uid/website/:wid/page/:pid/widget/youtube>
+    <a ng-click="model.toEditWidget()">
     <li class="list-group-item">YouTube
     </li>
     </a>

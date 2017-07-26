@@ -27,7 +27,7 @@
     function findUserById(userId) {
       for(var i = 0; i < users.length; i++) {
         if (users[i]._id === userId) {
-          return user[i];
+          return users[i];
         }
       }
     }
@@ -35,7 +35,7 @@
     function findUserByUsername(username) {
       for(var i = 0; i < users.length; i++) {
         if (users[i].username === username) {
-          return user[i];
+          return users[i];
         }
       }
     }
@@ -44,7 +44,7 @@
       for(var i = 0; i < users.length; i++) {
         if (users[i].username === username
           && users[i].password === password) {
-          return user[i];
+          return users[i];
         }
       }
     }

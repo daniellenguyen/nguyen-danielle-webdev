@@ -1,13 +1,13 @@
 <nav class="navbar navbar-fixed-top">
   <div class="navbar-text pull-left">
-    <a href="#!/user/:uid/website/:wid/page/:pid/widget">
+    <a ng-click="model.toWidgetList()">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
   </div>
   <a class="navbar-brand"
-     href="#">Widget Edit</a>
+     href="#">Widgets</a>
   <div class="navbar-text pull-right">
-    <a href="#!/user/:uid/website/:wid/page/:pid/widget">
+    <a ng-click="model.toWidgetList()">
       <span class="glyphicon glyphicon-ok"></span>
     </a>
   </div>
@@ -30,7 +30,7 @@
     <input type="number"
            class="form-control"
     placeholder="0"/>
-    <a href=#!/user/:uid/website/:wid/page/:pid/widget
+    <a ng-click="model.toWidgetList()"
        type="button"
        class="btn btn-danger btn-block">
       Delete

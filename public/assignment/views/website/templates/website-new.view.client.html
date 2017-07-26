@@ -1,23 +1,10 @@
 <div class="row container-fluid">
   <div class="col-sm-4 hidden-xs">
     <ul class="list-group">
-      <li class="list-group-item">Address Book App
-        <a href="#">
-          <span class="glyphicon glyphicon-cog pull-right"></span>
-        </a>
-      </li>
-      <li class="list-group-item">Blogger
-        <a href="#">
-          <span class="glyphicon glyphicon-cog pull-right"></span>
-        </a>
-      </li>
-      <li class="list-group-item">Blogging App
-        <a href="#">
-          <span class="glyphicon glyphicon-cog pull-right"></span>
-        </a>
-      </li>
-      <li class="list-group-item">Script Testing App
-        <a href="#">
+      <li class="list-group-item"
+          ng-repeat="website in model.websites"
+          ng-click="model.toPageList(website._id)">{{website.name}}
+        <a ng-click="model.toEditWebsite(website._id)">
           <span class="glyphicon glyphicon-cog pull-right"></span>
         </a>
       </li>
@@ -42,7 +29,7 @@
 <nav class="navbar navbar-fixed-top">
     <div class="col-sm-4 hidden-xs">
       <div class="navbar-text pull-left">
-        <a href="#!/user/:uid/website">
+        <a ng-click="model.toWebsiteList()">
           <span class="glyphicon glyphicon-chevron-left"></span>
         </a>
       </div>
@@ -56,14 +43,14 @@
       </div>
     </div>
     <div class="col-sm-8">
-      <a href="#!/user/:uid/website"
+      <a ng-click="model.toWebsiteList()"
          class="navbar-text hidden-sm hidden-md hidden-lg hidden-xl pull-left">
         <span class="glyphicon glyphicon-chevron-left"></span>
       </a>
       <a class="navbar-brand pull-left"
          href="#">New Website</a>
       <div class="navbar-text pull-right">
-        <a href="#!/user/:uid/website">
+        <a ng-click="model.updateWebsite()">
       <span class="glyphicon glyphicon-ok">
       </span>
         </a>
@@ -71,7 +58,7 @@
     </div>
 </nav>
 <nav class="navbar navbar-default navbar-fixed-bottom">
-  <a href="#!/user/:uid"
+  <a ng-click="model.toProfile()"
      class="navbar-text pull-right">
     <span class="glyphicon glyphicon-user"></span>
   </a>
