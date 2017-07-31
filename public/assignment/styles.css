@@ -1,5 +1,10 @@
 /*General*/
 
+/**
+Conflicts:
+-glyphicon
+ */
+
 body {
   overflow-x: hidden;
   padding-bottom: 50px;
@@ -62,15 +67,6 @@ body {
   margin-left: 20px;
 }
 
-.glyphicon {
-  color: white;
-}
-
-.glyphicon-cog {
-  margin-right: 5px;
-  color: #337ab7;
-}
-
 .row {
   margin-top: 70px;
   color: #337ab7;
@@ -97,15 +93,6 @@ body {
 .navbar-text {
   margin-right: 20px;
   margin-left: 20px;
-}
-
-.glyphicon {
-  color: white;
-}
-
-.glyphicon-cog {
-  margin-right: 5px;
-  color: #337ab7;
 }
 
 .hidden-xs {
@@ -148,15 +135,6 @@ body {
 .navbar-text {
   margin-right: 20px;
   margin-left: 20px;
-}
-
-.glyphicon {
-  color: white;
-}
-
-.glyphicon-cog {
-  margin-right: 5px;
-  color: #337ab7;
 }
 
 .hidden-xs {
@@ -206,19 +184,6 @@ body {
   margin-left: 20px;
 }
 
-.glyphicon {
-  color: #313233;
-}
-
-.glyphicon-user {
-  color: #337ab7;
-}
-
-.glyphicon-cog {
-  margin-right: 5px;
-  color: #337ab7;
-}
-
 .row {
   margin-top: 70px;
   color: #337ab7;
@@ -259,15 +224,7 @@ body {
   margin-bottom: -100%;
 }
 
-.glyphicon {
-  color: #313233;
-}
-
 .glyphicon-user {
-  color: #337ab7;
-}
-
-.glyphicon-cog {
   color: #337ab7;
 }
 
@@ -317,18 +274,6 @@ body {
   margin-bottom: -100%;
 }
 
-.glyphicon {
-  color: #313233;
-}
-
-.glyphicon-user {
-  color: #337ab7;
-}
-
-.glyphicon-cog {
-  color: #337ab7;
-}
-
 .row {
   margin-top: 70px;
   color: #337ab7;
@@ -373,10 +318,6 @@ body {
 .glyphicon {
   color: #313233;
   z-index: 2;
-}
-
-.glyphicon-user {
-  color: #337ab7;
 }
 
 .glyphicon-cog {
@@ -447,15 +388,6 @@ h2 {
   margin-left: 20px;
 }
 
-.glyphicon {
-  color: #313233;
-  z-index: 2;
-}
-
-.glyphicon-user {
-  color: #337ab7;
-}
-
 .row {
   margin-top: 70px;
   color: #337ab7;
@@ -495,15 +427,6 @@ a:hover {
   margin-left: 20px;
 }
 
-.glyphicon {
-  color: #313233;
-  z-index: 2;
-}
-
-.glyphicon-user {
-  color: #337ab7;
-}
-
 /*Widget Image*/
 
 .navbar-brand {
@@ -525,15 +448,6 @@ a:hover {
 .navbar-text {
   margin-right: 20px;
   margin-left: 20px;
-}
-
-.glyphicon {
-  color: #313233;
-  z-index: 2;
-}
-
-.glyphicon-user {
-  color: #337ab7;
 }
 
 /*Widget Youtube*/
@@ -559,14 +473,7 @@ a:hover {
   margin-left: 20px;
 }
 
-.glyphicon {
-  color: #313233;
-  z-index: 2;
-}
 
-.glyphicon-user {
-  color: #337ab7;
-}
 
 
 
