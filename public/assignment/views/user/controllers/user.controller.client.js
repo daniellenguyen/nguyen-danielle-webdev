@@ -5,18 +5,31 @@
     .controller("RegisterController", RegisterController)
     .controller("ProfileController", ProfileController);
 
-  function LoginController($location, UserService) {
+  function LoginController($location, $routeParams, UserService) {
     var vm = this;
     vm.login = login;
     vm.toRegister = toRegister;
 
-    function login(username, password) {
-      user = UserService.findUserByCredentials(username, password);
-      if(user) {
-        $location.url("/user/" + user._id);
-      } else {
-        vm.alert = "Unable to login";
+    function init() { }
+
+    init();
+
+    function login(user) {
+      if(!user) {
+        vm.errorMessage = "User not found";
+        return;
       }
+      var promise = UserService.findUserByCredentials(user.username, user.password);
+      promise.then(function(response) {
+        user = response.data;
+        if (!user) {
+          vm.errorMessage = "User not found";
+        }
+        else {
+          $routeParams.user = user;
+          $location.url("/user/" + user._id);
+        }
+      });
     }
 
     function toRegister() {
@@ -32,14 +45,17 @@
 
     function register(username, password) {
       var user = {
-        _id: "000",
+        _id: "000", //TODO fix this so that we can get unique ids
         username: username,
         password: password,
         firstName: "",
         lastName: ""
       };
-      UserService.createUser(user);
-      $location.url("/user/" + user._id);
+      var promise = UserService.createUser(user);
+      promise.then(function(response) {
+        user = response.data;
+        $location.url("/user/" + user._id);
+      });
     }
 
     function toLogin() {
@@ -54,6 +70,16 @@
     vm.toWebsites = toWebsites;
     vm.toLogin = toLogin;
 
+    function init() {
+      var promise = UserService.findUserById(vm.userId);
+      promise.then(function (response) {
+        vm.user = response.data;
+        console.log(vm.user);
+      });
+    }
+
+    init();
+
     function toWebsites() {
       $location.url("/user/" + vm.userId + "/website");
     }
@@ -61,12 +87,6 @@
     function toLogin() {
       $location.url("/login");
     }
-
-    function init() {
-      vm.user = UserService.findUserById(vm.userId);
-    }
-
-    init();
 
   }
 
