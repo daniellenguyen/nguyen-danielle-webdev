@@ -69,6 +69,7 @@
     vm.userId = $routeParams["uid"];
     vm.toWebsites = toWebsites;
     vm.toLogin = toLogin;
+    vm.updateUser = updateUser;
 
     function init() {
       var promise = UserService.findUserById(vm.userId);
@@ -85,6 +86,13 @@
 
     function toLogin() {
       $location.url("/login");
+    }
+
+    function updateUser() {
+      var promise = UserService.updateUser(vm.userId, vm.user);
+      promise.then(function(response) {
+        vm.user = response.data;
+      });
     }
 
   }

@@ -33,9 +33,9 @@
       return $http.get(url);
     }
 
-    function updateUser(userId) {
+    function updateUser(userId, user) {
       var url = "/api/user/" + userId;
-      return $http.put(url);
+      return $http.put(url, user);
     }
 
     function deleteUser(userId) {

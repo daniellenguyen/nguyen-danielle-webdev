@@ -72,20 +72,24 @@ function findUserByCredentials(request, response) {
 function updateUser(request, response) {
   var userId = request.params.uid;
   var user = request.body;
+  var newUsers = users;
   for (var i = 0; i < users.length; i++) {
-    if (users[i]._id === userId) {
-      users[i] = user;
+    if (newUsers[i]._id === userId) {
+      newUsers[i] = user;
+      users = newUsers;
       response.send(user);
       return;
     }
   }
 }
 
-function deleteUser(request, response) { //TODO ask how to implement this
+function deleteUser(request, response) {
   var userId = request.params.uid;
+  var newUsers = users;
   for (var i = 0; i < users.length; i++) {
-    if (users[i]._id === userId) {
-      users.splice(i, 1);
+    if (newUsers[i]._id === userId) {
+      newUsers.splice(i, 1);
+      return;
     }
   }
 }
