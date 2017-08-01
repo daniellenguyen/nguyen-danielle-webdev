@@ -74,7 +74,6 @@
       var promise = UserService.findUserById(vm.userId);
       promise.then(function (response) {
         vm.user = response.data;
-        console.log(vm.user);
       });
     }
 

@@ -29,7 +29,7 @@ function createUser(request, response) {
   user._id = 0; //TODO get info from input
   users.push(user);
   response.send(user);
-};
+}
 
 function findUserById(request, response) {
   var userId = request.params.uid;

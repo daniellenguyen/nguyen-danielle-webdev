@@ -14,8 +14,8 @@
     return api;
 
     function createUser(user) {
-      var url = "/api/user/" + user._id;
-      return $http.post(url, user);
+      var url = "/api/user/" + user._id; //TODO was it ok to not pass user to http
+      return $http.post(url);
     }
 
     function findUserById(userId) {

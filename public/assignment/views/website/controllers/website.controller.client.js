@@ -13,6 +13,16 @@
       vm.toNewWebsite = toNewWebsite;
       vm.toEditWebsite = toEditWebsite;
 
+      function init() {
+        var promise = WebsiteService.findWebsitesByUser(vm.userId);
+
+        promise.then(function(response) {
+          vm.websites = response.data;
+        });
+      }
+
+      init();
+
       function toProfile() {
         $location.url("/user/" + vm.userId);
       }
@@ -29,32 +39,44 @@
         $location.url("/user/" + vm.userId + "/website/" + websiteId);
       }
 
-      function init() {
-        vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
-      }
-
-      init();
-
     }
 
     function NewWebsiteController($location, $routeParams, WebsiteService) {
       var vm = this;
       vm.userId = $routeParams["uid"];
+      vm.website =   {
+        "_id": "0", //TODO generate actual id for these
+        "name": "",
+        "developerId": vm.userId,
+        "description": ""
+      };
       vm.toWebsiteList = toWebsiteList;
       vm.toProfile = toProfile;
-      vm.updateWebsite = updateWebsite;
+      vm.createWebsite = createWebsite;
       vm.toPageList = toPageList;
       vm.toEditWebsite = toEditWebsite;
+
+      function init() {
+        var websitesPromise = WebsiteService.findWebsitesByUser(vm.userId);
+
+        websitesPromise.then(function(response) {
+          vm.websites = response.data;
+        });
+      }
+
+      init();
 
       function toWebsiteList() {
         $location.url("/user/" + vm.userId + "/website");
       }
 
       function toPageList(websiteId) {
+        console.log(websiteId);
         $location.url("/user/" + vm.userId + "/website/" + websiteId + "/page");
       }
 
       function toEditWebsite(websiteId) {
+        console.log(websiteId);
         $location.url("/user/" + vm.userId + "/website/" + websiteId);
       }
 
@@ -62,18 +84,13 @@
         $location.url("/user/" + vm.userId);
       }
 
-      function updateWebsite(website) {
-        WebsiteService.updateWebsite(vm.websiteId, website);
-        $location.url("/user/" + vm.userId + "/website");
+      function createWebsite() {
+        var promise = WebsiteService.createWebsite(vm.userId, vm.website);
+        promise.then(function(response) {
+          $location.url("/user/" + vm.userId + "/website");
+          vm.websites = response.data;
+        });
       }
-
-      function init() {
-        vm.website = WebsiteService.findWebsiteById(vm.websiteId);
-        vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
-        // model.website = jQuery.extend(true, {}, WebsiteService.findWebsiteById(model.websiteId));
-      }
-
-      init();
 
     }
 
@@ -88,6 +105,21 @@
       vm.toPageList = toPageList;
       vm.toEditWebsite = toEditWebsite;
 
+      function init() {
+        var websitePromise = WebsiteService.findWebsiteById(vm.websiteId);
+        var websitesPromise = WebsiteService.findWebsitesByUser(vm.userId);
+
+        websitePromise.then(function(response) {
+          vm.website = response.data;
+        });
+
+        websitesPromise.then(function(response) {
+          vm.websites = response.data;
+        });
+      }
+
+      init();
+
       function toWebsiteList() {
         $location.url("/user/" + vm.userId + "/website");
       }
@@ -100,29 +132,25 @@
         $location.url("/user/" + vm.userId + "/website/" + websiteId);
       }
 
-
       function toProfile() {
         $location.url("/user/" + vm.userId);
       }
 
-      function updateWebsite(website) {
-        WebsiteService.updateWebsite(vm.websiteId, website);
-        $location.url("/user/" + vm.userId + "/website");
+      function updateWebsite() {
+        var promise = WebsiteService.updateWebsite(vm.websiteId, vm.website);
+        promise.then(function(response) {
+          $location.url("/user/" + vm.userId + "/website");
+          vm.websites = response.data;
+        });
       }
 
       function deleteWebsite() {
-        WebsiteService.deleteWebsite(vm.websiteId);
-        $location.url("/user/" + vm.userId + "/website");
+        var promise = WebsiteService.deleteWebsite(vm.websiteId);
+        promise.then(function(response) {
+          vm.websites = response.data;
+          $location.url("/user/" + vm.userId + "/website");
+        });
       }
-
-      function init() {
-        vm.website = WebsiteService.findWebsiteById(vm.websiteId);
-        vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
-        // model.website = jQuery.extend(true, {}, WebsiteService.findWebsiteById(model.websiteId));
-      }
-
-      init();
-
     }
 
 })();
