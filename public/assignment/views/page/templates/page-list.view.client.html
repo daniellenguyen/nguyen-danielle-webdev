@@ -15,10 +15,14 @@
 <div class="row container-fluid">
   <ul class="list-group">
     <li class="list-group-item"
-        ng-repeat="page in model.pages"
-        ng-click="model.toWidgetList(page._id)">{{page.name}}
+        ng-repeat="page in model.pages">
+      <a ng-click="model.toWidgetList(page._id)">
+        {{page.name}}
+      </a>
       <a ng-click="model.toEditPage(page._id)">
-        <span class="glyphicon glyphicon-cog pull-right"></span>
+        <span
+            class="glyphicon glyphicon-cog pull-right">
+        </span>
       </a>
     </li>
   </ul>

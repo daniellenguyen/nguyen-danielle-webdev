@@ -85,11 +85,16 @@
       }
 
       function createWebsite() {
-        var promise = WebsiteService.createWebsite(vm.userId, vm.website);
-        promise.then(function(response) {
+        if (vm.website.name) {
+          var promise = WebsiteService.createWebsite(vm.userId, vm.website);
+          promise.then(function (response) {
+            $location.url("/user/" + vm.userId + "/website");
+            vm.websites = response.data;
+          });
+        }
+        else {
           $location.url("/user/" + vm.userId + "/website");
-          vm.websites = response.data;
-        });
+        }
       }
 
     }
@@ -99,6 +104,7 @@
       vm.websiteId = $routeParams["wid"];
       vm.userId = $routeParams["uid"];
       vm.toWebsiteList = toWebsiteList;
+      vm.toNewWebsite = toNewWebsite;
       vm.toProfile = toProfile;
       vm.updateWebsite = updateWebsite;
       vm.deleteWebsite = deleteWebsite;
@@ -122,6 +128,10 @@
 
       function toWebsiteList() {
         $location.url("/user/" + vm.userId + "/website");
+      }
+
+      function toNewWebsite() {
+        $location.url("/user/" + vm.userId + "/website/new");
       }
 
       function toPageList(websiteId) {

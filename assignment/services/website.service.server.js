@@ -27,10 +27,10 @@ app.delete("/api/website/:wid", deleteWebsite);
 
 function createWebsite(request, response) {
   var websiteChanged = request.body;
-  console.log(request.body);
   var newWebsites = websites;
   if (websiteChanged) {
     newWebsites.push(websiteChanged);
+    websites = newWebsites;
     response.send(newWebsites);
   }
 }
@@ -50,11 +50,13 @@ function findWebsitesByUser(request, response) {
 
 function findWebsiteById(request, response) {
   var websiteId = request.params.wid;
-  for (var i = 0; i < websites.length; i++) {
-    if (websites[i]._id === websiteId) {
-      //return angular.copy(websites[i]);
-      response.send(websites[i]);
-      return;
+  if (websiteId) {
+    for (var i = 0; i < websites.length; i++) {
+      if (websites[i]._id === websiteId) {
+        //return angular.copy(websites[i]);
+        response.send(websites[i]);
+        return;
+      }
     }
   }
 }
@@ -63,11 +65,13 @@ function updateWebsite(request, response) {
   var websiteId = request.params.wid;
   var website = request.body;
   var newWebsites = websites;
-  for (var i = 0; i < websites.length; i++) {
-    if (newWebsites[i]._id === websiteId) {
-      newWebsites[i] = website;
-      response.send(newWebsites);
-      return;
+  if (websiteId && website) {
+    for (var i = 0; i < websites.length; i++) {
+      if (newWebsites[i]._id === websiteId) {
+        newWebsites[i] = website;
+        response.send(newWebsites);
+        return;
+      }
     }
   }
 }
@@ -76,7 +80,7 @@ function deleteWebsite(request, response) {
   var websiteId = request.params.wid;
   var newWebsites = websites;
   for (var i = 0; i < websites.length; i++) {
-    if (websites[i]._id === websiteId) {
+    if (newWebsites[i]._id === websiteId) {
       newWebsites.splice(i, 1);
       response.send(newWebsites);
     }

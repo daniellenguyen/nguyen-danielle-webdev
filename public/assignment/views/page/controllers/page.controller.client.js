@@ -15,6 +15,16 @@
       vm.toNewPage = toNewPage;
       vm.toEditPage = toEditPage;
 
+      function init() {
+        var promise = PageService.findPagesByWebsiteId(vm.websiteId);
+
+        promise.then(function(response) {
+          vm.pages = response.data;
+        });
+      }
+
+      init();
+
       function toProfile() {
         $location.url("/user/" + vm.userId);
       }
@@ -35,12 +45,6 @@
         $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + pageId);
       }
 
-      function init() {
-        vm.pages = PageService.findPagesByWebsiteId(vm.websiteId);
-      }
-
-      init();
-
     }
 
     function NewPageController($location, $routeParams, PageService) {
@@ -49,7 +53,25 @@
       vm.websiteId = $routeParams["wid"];
       vm.toPageList = toPageList;
       vm.toProfile = toProfile;
-      vm.updatePage = updatePage;
+      vm.createPage = createPage;
+      vm.toWidgetList = toWidgetList;
+      vm.toEditPage = toEditPage;
+      vm.page = {
+        "_id": "0", //TODO generate actual id for these
+        "name": "",
+        "websiteId": vm.websiteId,
+        "description": ""
+      };
+
+      function init() {
+        var promise = PageService.findPagesByWebsiteId(vm.websiteId);
+
+        promise.then(function(response) {
+          vm.pages = response.data;
+        })
+      }
+
+      init();
 
       function toProfile() {
         $location.url("/user/" + vm.userId);
@@ -59,13 +81,25 @@
         $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
       }
 
-      function updatePage(page) {
-        PageService.updatePage(vm.pageId, page);
-        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+      function toWidgetList(pageId) {
+        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + pageId + "/widget");
       }
 
-      function init() {
-        vm.page = jQuery.extend(true, {}, PageService.findPageById(vm.pageId));
+      function toEditPage(pageId) {
+        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + pageId);
+      }
+
+      function createPage() {
+        if (vm.page.name) {
+          var promise = PageService.createPage(vm.websiteId, vm.page);
+          promise.then(function (response) {
+            vm.pages = response.data;
+            this.toPageList();
+          });
+        }
+        else {
+          this.toPageList();
+        }
       }
 
     }
@@ -77,8 +111,25 @@
       vm.websiteId = $routeParams["wid"];
       vm.toPageList = toPageList;
       vm.toProfile = toProfile;
+      vm.toEditPage = toEditPage;
+      vm.toWidgetList = toWidgetList;
       vm.updatePage = updatePage;
       vm.deletePage = deletePage;
+
+      function init() {
+        var pagePromise = PageService.findPageById(vm.pageId);
+        var pagesPromise = PageService.findPagesByWebsiteId(vm.websiteId);
+
+        pagePromise.then(function(response) {
+          vm.page = response.data;
+        });
+
+        pagesPromise.then(function(response) {
+          vm.pages = response.data;
+        });
+      }
+
+      init();
 
       function toProfile() {
         $location.url("/user/" + vm.userId);
@@ -88,22 +139,31 @@
         $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
       }
 
+      function toEditPage(pageId) {
+        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + pageId);
+      }
+
+      function toWidgetList(pageId) {
+        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + pageId + "/widget");
+      }
+
       function updatePage(page) {
-        PageService.updatePage(vm.pageId, page);
-        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+        var promise = PageService.updatePage(vm.pageId, vm.page);
+
+        promise.then(function(response) {
+          vm.pages = response.data;
+          $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+        });
       }
 
       function deletePage() {
-        PageService.deletePage(vm.pageId);
-        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
-      }
+        var promise = PageService.deletePage(vm.pageId);
 
-      function init() {
-        vm.pages = PageService.findPagesByWebsiteId(vm.websiteId);
-        vm.page = jQuery.extend(true, {}, PageService.findPageById(vm.pageId));
+        promise.then(function(response) {
+          vm.pages = response.data;
+          $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+        });
       }
-
-      init();
 
     }
 

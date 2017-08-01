@@ -15,8 +15,10 @@
 <div class="row container-fluid">
   <ul class="list-group">
       <li class="list-group-item"
-          ng-repeat="website in model.websites"
-          ng-click="model.toPageList(website._id)">{{website.name}}
+          ng-repeat="website in model.websites">
+        <a ng-click="model.toPageList(website._id)">
+          {{website.name}}
+        </a>
         <a ng-click="model.toEditWebsite(website._id)">
           <span class="glyphicon glyphicon-cog pull-right"></span>
         </a>
