@@ -292,6 +292,11 @@ body {
 
 /*Widget List*/
 
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+  border-top: none;
+  border-bottom: none;
+}
+
 .navbar-brand {
   color: #757272;
   font-weight: bold;
@@ -353,14 +358,6 @@ body {
 
 .list-group-item {
   border: none;
-}
-
-h1 {
-  text-align: center;
-}
-
-h2 {
-  margin-left: 17px;
 }
 
 /*Widget Choose*/

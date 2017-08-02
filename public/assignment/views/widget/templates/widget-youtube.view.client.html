@@ -17,18 +17,22 @@
     Name
     <input type="text"
            class="form-control"
-    placeholder="name"/>
+           ng-model="model.widget.name"
+           placeholder="name"/>
     Text
-    <input type="email"
+    <input type="text"
            class="form-control"
+           ng-model="model.widget.text"
     placeholder="text"/>
     URL
     <input type="url"
            class="form-control"
+           ng-model="model.widget.url"
     placeholder="url"/>
     Width
-    <input type="number"
+    <input type="text"
            class="form-control"
+           ng-model="model.widget.width"
     placeholder="0"/>
     <a ng-click="model.toWidgetList()"
        type="button"

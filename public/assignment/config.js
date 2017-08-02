@@ -64,17 +64,17 @@
         controller: "NewWidgetController",
         controllerAs: "model"
       })
-      .when("/user/:uid/website/:wid/page/:pid/widget/heading", {
+      .when("/user/:uid/website/:wid/page/:pid/widget/heading/:wqid", {
         templateUrl: "views/widget/templates/widget-heading.view.client.html",
         controller: "EditWidgetController",
         controllerAs: "model"
       })
-      .when("/user/:uid/website/:wid/page/:pid/widget/image", {
+      .when("/user/:uid/website/:wid/page/:pid/widget/image/:wqid", {
         templateUrl: "views/widget/templates/widget-image.view.client.html",
         controller: "EditWidgetController",
         controllerAs: "model"
       })
-      .when("/user/:uid/website/:wid/page/:pid/widget/youtube", {
+      .when("/user/:uid/website/:wid/page/:pid/widget/youtube/:wqid", {
         templateUrl: "views/widget/templates/widget-youtube.view.client.html",
         controller: "EditWidgetController",
         controllerAs: "model"
