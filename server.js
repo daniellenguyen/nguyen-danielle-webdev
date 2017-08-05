@@ -10,7 +10,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
 
-app.listen(port);
-
 require("./test/app");
 require("./assignment/app.js");
+require("./public/project/poc/server.js");
+
+app.listen(port);

@@ -1,0 +1,29 @@
+<h1>Petfinder API</h1>
+<h2>Search</h2>
+<input placeholder="Zip Code"
+       ng-model="model.zipCode"
+       class="form-control"/>
+<br>
+<select class="form-control"
+        ng-model="petType"
+        ng-options="petType for petType in model.petTypes"
+        ng-change="model.selectType(petType)">Select a pet type
+  <option value="">Pet Type</option>
+</select>
+<br>
+<a ng-click="model.searchByZipAndType(model.zipCode, model.petType)" class="btn btn-primary btn-block">
+  Search
+</a>
+
+<table class="table">
+  <tr ng-repeat="pet in model.pets">
+    <td>
+      <a ng-click="model.toDetails(pet.id.$t)">
+        {{pet.name.$t}}
+      </a>
+    </td>
+    <td>
+      <img ng-src="{{pet.media.photos.photo[0].$t}}"/>
+    </td>
+  </tr>
+</table>
