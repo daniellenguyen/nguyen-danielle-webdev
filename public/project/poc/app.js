@@ -88,13 +88,11 @@
     };
 
     function searchByZipAndType(zipCode, petType) {
-      var key = 'e54c91a4f624f9e89f5547d99cdc651e';
-      return $http.get("/api/petfinder/"+ key + "/" + zipCode + "/" + petType);
+      return $http.get("/api/petfinder/" + zipCode + "/" + petType);
     }
 
     function getPet(petId) {
-      var key = 'e54c91a4f624f9e89f5547d99cdc651e';
-      return $http.get("/api/petfinder/"+ key + "/details/" + petId);
+      return $http.get("/api/petfinder/details/" + petId);
     }
 
   }
