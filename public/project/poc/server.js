@@ -1,6 +1,16 @@
 var app = require('../../../express');
 var request = require('request');
 
+var connectionString = 'mongodb://127.0.0.1:27017/test'; // for local
+if(process.env.MLAB_USERNAME_WEBDEV) { // check if running remotely
+  var username = process.env.MLAB_USERNAME_WEBDEV; // get from environment
+  var password = process.env.MLAB_PASSWORD_WEBDEV;
+  connectionString = 'mongodb://' + username + ':' + password;
+  connectionString += '@ds151232.mlab.com:51232/heroku_fl0s7c2d';
+  console.log(username);
+  console.log(password);
+}
+
 module.exports = {
   0: searchByZipAndType,
   1: getPet
