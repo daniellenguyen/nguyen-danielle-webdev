@@ -45,12 +45,15 @@
 
     function register(username, password) {
       var user = {
-        _id: "000", //TODO fix this so that we can get unique ids
         username: username,
         password: password,
         firstName: "",
-        lastName: ""
+        lastName: "",
+        email: "",
+        phone: "",
+        websites: []
       };
+
       var promise = UserService.createUser(user);
       promise.then(function(response) {
         user = response.data;
