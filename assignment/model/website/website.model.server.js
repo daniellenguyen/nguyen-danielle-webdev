@@ -9,6 +9,8 @@ websiteModel.findWebsitesByUser = findWebsitesByUser;
 websiteModel.findWebsiteById = findWebsiteById;
 websiteModel.updateWebsite = updateWebsite;
 websiteModel.deleteWebsite = deleteWebsite;
+websiteModel.addPage = addPage;
+websiteModel.removePage = removePage;
 module.exports = websiteModel;
 
 function createWebsite(userId, website) {
@@ -45,5 +47,24 @@ function deleteWebsite(userId, websiteId) {
     .remove({_id: websiteId})
     .then(function () {
       return userModel.removeWebsite(userId, websiteId);
+    });
+}
+
+function addPage(websiteId, pageId) {
+  return websiteModel
+    .findById(websiteId)
+    .then(function (website) {
+      website.pages.push(pageId);
+      return website.save();
+    });
+}
+
+function removePage(websiteId, pageId) {
+  return websiteModel
+    .findById(websiteId)
+    .then(function (website) {
+      var index = website.pages.indexOf(pageId);
+      website.pages.splice(index, 1);
+      return website.save();
     });
 }

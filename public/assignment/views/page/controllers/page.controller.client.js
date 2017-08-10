@@ -57,9 +57,8 @@
       vm.toWidgetList = toWidgetList;
       vm.toEditPage = toEditPage;
       vm.page = {
-        "_id": "0", //TODO generate actual id for these
         "name": "",
-        "websiteId": vm.websiteId,
+        "website_id": vm.websiteId,
         "description": ""
       };
 
@@ -94,11 +93,11 @@
           var promise = PageService.createPage(vm.websiteId, vm.page);
           promise.then(function (response) {
             vm.pages = response.data;
-            this.toPageList();
+            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
           });
         }
         else {
-          this.toPageList();
+          $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
         }
       }
 
@@ -148,7 +147,7 @@
       }
 
       function updatePage(page) {
-        var promise = PageService.updatePage(vm.pageId, vm.page);
+        var promise = PageService.updatePage(vm.page);
 
         promise.then(function(response) {
           vm.pages = response.data;

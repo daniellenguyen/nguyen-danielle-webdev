@@ -27,8 +27,8 @@
       return $http.get(url);
     }
 
-    function updatePage(pageId, page) {
-      var url = "/api/page/" + pageId;
+    function updatePage(page) {
+      var url = "/api/page/";
       return $http.put(url, page);
     }
 
