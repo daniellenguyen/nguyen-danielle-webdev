@@ -17,7 +17,7 @@ function createPage(websiteId, page) {
     .create(page)
     .then(function (pageDoc) {
       pageTmp = pageDoc;
-      return websiteModel.addPage(websiteId, pageDoc._id); // TODO
+      return websiteModel.addPage(websiteId, pageDoc._id);
     })
     .then(function () {
       return pageTmp;

@@ -8,22 +8,6 @@ module.exports = {
   4: deleteWidget
 };
 
-var widgets = [
-  {"_id": "123", "widgetType": "HEADING", "pageId": "321", "size": 2, "text": "GIZMODO"},
-  {"_id": "234", "widgetType": "HEADING", "pageId": "321", "size": 4, "text": "Lorem ipsum"},
-  {
-    "_id": "345", "widgetType": "IMAGE", "pageId": "321", "width": "100%",
-    "url": "http://lorempixel.com/400/200/"
-  },
-  {"_id": "456", "widgetType": "HTML", "pageId": "321", "text": "Lorem ipsum"},
-  {"_id": "567", "widgetType": "HEADING", "pageId": "321", "size": 4, "text": "Lorem ipsum"},
-  {
-    "_id": "678", "widgetType": "YOUTUBE", "pageId": "321", "width": "100%",
-    "url": "https://www.youtube.com/embed/AM2Ivdi9c4E"
-  },
-  {"_id": "789", "widgetType": "HTML", "pageId": "321", "text": "Lorem ipsum"}
-];
-
 // http handlers
 app.post("/api/page/:pid/widget", createWidget);
 app.get("/api/page/:pid/widget", findWidgetsByPageId);
@@ -32,11 +16,13 @@ app.put("/api/widget/:wid", updateWidget);
 app.delete("/api/widget/:wid", deleteWidget);
 
 function createWidget(request, response) {
-  var widget = request.body;
-  var newWidgets = widgets;
-  newWidgets.push(widget);
-  widgets = newWidgets;
-  response.send(newWidgets);
+  var websiteId = request.params.wid;
+  var page = request.body;
+  pageModel
+    .createPage(websiteId, page)
+    .then(function (pages) {
+      response.json(pages);
+    });
 }
 
 function findWidgetsByPageId(request, response) {
