@@ -45,9 +45,8 @@
       var vm = this;
       vm.userId = $routeParams["uid"];
       vm.website =   {
-        "_id": "0", //TODO generate actual id for these
+        "user_id": vm.userId,
         "name": "",
-        "developerId": vm.userId,
         "description": ""
       };
       vm.toWebsiteList = toWebsiteList;
@@ -71,12 +70,10 @@
       }
 
       function toPageList(websiteId) {
-        console.log(websiteId);
         $location.url("/user/" + vm.userId + "/website/" + websiteId + "/page");
       }
 
       function toEditWebsite(websiteId) {
-        console.log(websiteId);
         $location.url("/user/" + vm.userId + "/website/" + websiteId);
       }
 
@@ -147,7 +144,7 @@
       }
 
       function updateWebsite() {
-        var promise = WebsiteService.updateWebsite(vm.websiteId, vm.website);
+        var promise = WebsiteService.updateWebsite(vm.userId, vm.website);
         promise.then(function(response) {
           $location.url("/user/" + vm.userId + "/website");
           vm.websites = response.data;
@@ -155,7 +152,7 @@
       }
 
       function deleteWebsite() {
-        var promise = WebsiteService.deleteWebsite(vm.websiteId);
+        var promise = WebsiteService.deleteWebsite(vm.userId, vm.websiteId);
         promise.then(function(response) {
           vm.websites = response.data;
           $location.url("/user/" + vm.userId + "/website");

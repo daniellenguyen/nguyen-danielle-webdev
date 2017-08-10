@@ -27,13 +27,13 @@
       return $http.get(url);
     }
 
-    function updateWebsite(websiteId, website) {
-      var url = "/api/website/" + websiteId;
+    function updateWebsite(userId, website) {
+      var url = "/api/website/" + userId;
       return $http.put(url, website);
     }
 
-    function deleteWebsite(websiteId) {
-      var url = "/api/website/" + websiteId;
+    function deleteWebsite(userId, websiteId) {
+      var url = "/api/website/" + userId + "/" + websiteId;
       return $http.delete(url);
     }
   }
