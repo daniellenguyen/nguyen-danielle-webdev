@@ -1,0 +1,99 @@
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  padding: 20px;
+  font-family: Amatic;
+  font-weight: bold;
+  font-size: 20px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@font-face {
+  font-family: 'Amatic'; /*a name to be used later*/
+  src: url("./fonts/Amatic-Bold.ttf"); /*URL to font*/
+}
+
+#border {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  border: 5px solid black;
+}
+
+#footer-separator {
+  margin-bottom: 40px;
+}
+
+.search-title {
+  font-size: 70px;
+  text-align: center;
+}
+
+.search-inputs {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.search-image {
+  display: block;
+  margin: 0 auto;
+}
+
+.form-control {
+  border-radius: 0 !important;
+  border: 1px solid black;
+  font-size: 20px;
+}
+
+select.form-control {
+  -webkit-appearance: none;
+  -webkit-padding-before: 0;
+  -webkit-padding-after: 0;
+  font-size: 20px;
+  -webkit-text-fill-color: #9b9da0;
+}
+
+.search-button {
+  border: 1px solid black;
+  border-radius: 0 !important;
+  font-size: 20px;
+  color: black;
+}
+
+.search-button:hover, .form-control:hover, select.form-control:hover{
+  border: 2px solid black;
+  font-weight: bold;
+  box-shadow: none !important;
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+.form-control:focus {
+  border: 2px solid black;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.has-error .form-control:focus {
+  box-shadow: none; -webkit-box-shadow: none;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background-color: black;
+}
+
+a, a:focus, a:hover {
+  color: white;
+  text-decoration: none;
+}

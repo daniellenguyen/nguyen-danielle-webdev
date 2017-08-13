@@ -1,0 +1,54 @@
+<div class="container-fluid" ng-controller="SearchController">
+  <div id="border"></div>
+  <div class="row">
+    <img class="search-image"
+         ng-src={{model.getRandomFromList()}}
+         alt="Imagine there's a funny animal photo here."
+         style="width:304px;height:228px;">
+  </div>
+  <div class="row">
+    <h1 class="search-title">search for a lifelong companion</h1>
+  </div>
+  <div class="row">
+    <div class="search-inputs col-sm-4 col-sm-offset-2">
+      <input placeholder="Zip Code"
+             ng-model="model.zipCode"
+             class="form-control"/>
+    </div>
+    <div class="search-inputs col-sm-4">
+      <select id="search-dropdown"
+              ng-model="petType"
+              ng-options="petType for petType in model.petTypes"
+              ng-change="model.selectType(petType)"
+              class="form-control">
+        <option value="">Pet Type</option>
+      </select>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="search-inputs col-sm-4">
+      <a ng-click="model.searchByZipAndType(model.zipCode, model.petType)" class="search-button btn btn-block">
+        Can I be more specific?
+      </a>
+    </div>
+    <div class="search-inputs col-sm-4">
+      <a ng-click="model.searchByZipAndType(model.zipCode, model.petType)" class="search-button btn btn-block">
+        Just plain ol' search!
+      </a>
+    </div>
+    <div id="footer-separator" class="search-inputs col-sm-4">
+      <a ng-click="model.searchByZipAndType(model.zipCode, model.petType)" class="search-button btn btn-block">
+        I'm feeling lucky!!
+      </a>
+    </div>
+  </div>
+  <footer class="footer navbar-fixed-bottom">
+      <div class="col-xs-4 col-xs-offset-3">
+        <a href="diagram.png">Link to class diagram</a>
+      </div>
+      <div class="col-xs-4">
+        <a href="poc/index.html">Link to proof of concept</a>
+      </div>
+  </footer>
+</div>
