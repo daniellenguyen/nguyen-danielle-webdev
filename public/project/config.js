@@ -19,7 +19,7 @@
         controller: "SearchController",
         controllerAs: "model"
       })
-      .when("/search/pets", {
+      .when("/search/pets/:zipCode/:petType", {
         templateUrl: "views/search/templates/petResults.html",
         controller: "PetResultsController",
         controllerAs: "model"

@@ -28,17 +28,17 @@
   <br>
   <div class="row">
     <div class="search-inputs col-sm-4">
-      <a ng-click="model.searchByZipAndType(model.zipCode, model.petType)" class="search-button btn btn-block">
+      <a ng-click="model.toAdvancedSearch()" class="search-button btn btn-block">
         Can I be more specific?
       </a>
     </div>
     <div class="search-inputs col-sm-4">
-      <a ng-click="model.searchByZipAndType(model.zipCode, model.petType)" class="search-button btn btn-block">
+      <a ng-click="model.simpleSearch()" class="search-button btn btn-block">
         Just plain ol' search!
       </a>
     </div>
     <div id="footer-separator" class="search-inputs col-sm-4">
-      <a ng-click="model.searchByZipAndType(model.zipCode, model.petType)" class="search-button btn btn-block">
+      <a ng-click="model.getRandomPet()" class="search-button btn btn-block">
         I'm feeling lucky!!
       </a>
     </div>

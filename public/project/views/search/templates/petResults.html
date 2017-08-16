@@ -1,0 +1,9 @@
+<div class="container-fluid" ng-controller="PetResultsController">
+  <div id="border"></div>
+  <div class="petResult" ng-repeat="pet in model.concisePetList">
+    <h1 class="petResultsText" ng-click=model.toDetails(pet["id"])>
+      {{pet["name"]}}
+    </h1>
+    <img ng-click=model.toDetails(pet["id"]) ng-src={{pet["photo"]}}/>
+  </div>
+</div>

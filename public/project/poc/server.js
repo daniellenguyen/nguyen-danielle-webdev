@@ -16,7 +16,7 @@ function searchByZipAndType(req, res) {
   var zipCode = req.params.zipCode;
   var petType = req.params.petType;
   var url = 'http://api.petfinder.com/pet.find?key=' + key + '&location='
-    + zipCode + '&animal=' + petType + '&count=5&output=basic&format=json';
+    + zipCode + '&animal=' + petType + '&output=basic&format=json'; //&count=5
   request(url, function(error, response, body) {
     if (!error && response.statusCode === 200) {
       res.send(body);

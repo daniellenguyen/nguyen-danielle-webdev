@@ -1,4 +1,4 @@
-(function() {
+(function () {
   angular
     .module("PetWebsite")
     .controller("SearchController", SearchController);
@@ -7,21 +7,24 @@
     var vm = this;
     vm.getRandomFromList = getRandomFromList;
     vm.selectType = selectType;
-    vm.toPOC = toPOC;
-    vm.toPOCDiagram = toPOCDiagram;
+    vm.simpleSearch = simpleSearch;
+    vm.toAdvancedSearch = toAdvancedSearch;
+    vm.getRandomPet = getRandomPet;
     vm.petTypes = [
-        "any",
-        "dog",
-        "cat",
-        "rabbit",
-        "smallfurry",
-        "horse",
-        "bird",
-        "reptile",
-        "barnyard"
-      ];
+      "any",
+      "dog",
+      "cat",
+      "rabbit",
+      "smallfurry",
+      "horse",
+      "bird",
+      "reptile",
+      "barnyard"
+    ];
 
-    function init() {}
+    function init() {
+      vm.zipCode = null;
+    }
 
     init();
 
@@ -34,15 +37,24 @@
     }
 
     function selectType(petType) {
-      model.petType = petType;
+      vm.petType = petType;
     }
 
-    function toPOCDiagram() {
-      $location.url("/diagram.png");
+    function toAdvancedSearch() {
+      $location.url("/search/advanced");
+      // shelter search will happen here
     }
 
-    function toPOC() {
-      $location.url("/poc/index.html");
+    function simpleSearch() {
+      $location.url("/search/pets/" + vm.zipCode + "/" + vm.petType);
+    }
+
+    function getRandomPet() {
+      var promise = SearchService.getRandomPet(vm.zipCode, vm.petType);
+
+      promise.then(function (response) {
+        vm.pets = response.data.petfinder.pets.pet;
+      });
     }
 
     /**
