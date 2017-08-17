@@ -29,7 +29,7 @@
         controller: "ShelterResultsController",
         controllerAs: "model"
       })
-      .when("/search/pets/:pid", {
+      .when("/search/pets/:petId", {
         templateUrl: "views/search/templates/petDetails.html",
         controller: "PetDetailsController",
         controllerAs: "model"

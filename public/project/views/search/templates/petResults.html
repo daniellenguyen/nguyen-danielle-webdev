@@ -1,9 +1,9 @@
 <div class="container-fluid" ng-controller="PetResultsController">
-  <div id="border"></div>
+  <h1 class="petResultsHeading">Results</h1>
   <div class="petResult" ng-repeat="pet in model.concisePetList">
-    <h1 class="petResultsText" ng-click=model.toDetails(pet["id"])>
+    <h2 class="petResultsNames" ng-click=model.toPetDetails(pet["id"])>
       {{pet["name"]}}
-    </h1>
-    <img ng-click=model.toDetails(pet["id"]) ng-src={{pet["photo"]}}/>
+    </h2>
+    <img class="view overlay hm-stylish-light" ng-click=model.toPetDetails(pet["id"]) ng-src={{pet["photo"]}}/>
   </div>
 </div>

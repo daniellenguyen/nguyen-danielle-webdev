@@ -9,6 +9,7 @@ var key = process.env.PETFINDER_API_KEY;
 
 // http handlers
 app.get("/api/petfinder/:zipCode/:petType", simpleSearch);
+app.get("/api/petfinder/:petId", getSinglePet);
 
 //var serverPetList = [];
 
@@ -24,6 +25,21 @@ function simpleSearch(req, res) {
     }
   });
 }
+
+function getSinglePet(req, res) {
+  var petId = req.params.petId;
+  var url = 'http://api.petfinder.com/pet.get?key=' + key + '&id=' + petId + '&format=json';
+  request(url, function (error, response, body) {
+    if (!error && response.statusCode === 200) {
+      var cleanerData = flattenObj(JSON.parse(body).petfinder.pet);
+      res.send(cleanerData);
+    }
+  });
+}
+
+/**
+ * Helper methods to clean up API data
+ */
 
 function flattenList(objArray) {
   var finishedArray = [];

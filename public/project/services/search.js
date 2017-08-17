@@ -4,7 +4,8 @@
     .factory("SearchService", SearchService);
   function SearchService($http) {
     var api = {
-      "simpleSearch": simpleSearch
+      "simpleSearch": simpleSearch,
+      "getSinglePet": getSinglePet
     };
     return api;
 
@@ -12,5 +13,8 @@
       return $http.get("/api/petfinder/" + zipCode + "/" + petType);
     }
 
+    function getSinglePet(petId) {
+      return $http.get("/api/petfinder/" + petId);
+    }
   }
 })();

@@ -17,14 +17,52 @@ body {
   src: url("./fonts/Amatic-Bold.ttf"); /*URL to font*/
 }
 
-#border {
+@font-face {
+  font-family: 'Abel'; /*a name to be used later*/
+  src: url("./fonts/abel-regular.ttf"); /*URL to font*/
+}
+
+#border-left {
   top: 0;
-  right: 0;
   bottom: 0;
+  /*right: 0;*/
   left: 0;
   position: fixed;
-  border: 12px solid black;
+  border: 7px solid black;
 }
+
+#border-right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  border: 7px solid black;
+}
+
+#border-top {
+  top: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  border: 7px solid black;
+}
+
+#border-bottom {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  border: 7px solid black;
+}
+
+/*#border-top-bottom {*/
+/*top: 0;*/
+/*bottom: 0;*/
+/*right: 0;*/
+/*left: 0;*/
+/*position: fixed;*/
+/*border: 12px solid black;*/
+/*}*/
 
 #footer-separator {
   margin-bottom: 40px;
@@ -67,7 +105,7 @@ select.form-control {
   color: black;
 }
 
-.search-button:hover, .form-control:hover, select.form-control:hover{
+.search-button:hover, .form-control:hover, select.form-control:hover {
   border: 3px solid black;
   font-weight: bold;
   box-shadow: none !important;
@@ -81,8 +119,10 @@ select.form-control {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
+
 .has-error .form-control:focus {
-  box-shadow: none; -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 .footer {
@@ -98,16 +138,94 @@ a, a:focus, a:hover {
   text-decoration: none;
 }
 
-.petResultsText {
+.petResultsHeading {
   color: black;
+  text-align: center;
+  font-size: 52px;
 }
 
-.petResult {
-  float:left; width:33.33333%; margin-bottom:1em;
+.petResultsNames {
+  color: black;
+  text-align: center;
+  font-size: 40px;
 }
 
-.petResult:nth-of-type(3n+1) {padding-right:1%;}
-.petResult:nth-of-type(3n+2) {padding:0 .5%;}
-.petResult:nth-of-type(3n+3) {padding-left:1%;}
-.petResult img {width:100%; height:auto; margin:0;}
-.petResult:nth-of-type(3n+4) {clear:left;}
+.petResult img {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 15%;
+  width: 70%;
+  height: auto;
+  border: solid 5px black;
+}
+
+.petResult img:hover {
+  opacity: 0.9;
+}
+
+.carousel-inner {
+  width: 100%;
+  height: auto;
+  position: relative;
+  /*border: solid black 5px;*/
+  /*background-color: black;*/
+}
+
+.carousel-indicators {
+  top: 50px;
+  position: relative;
+
+}
+
+#myCarousel {
+  position: absolute;
+  margin-left: 30px;
+  margin-right: 30px;
+  /*margin-bottom: 15px;*/
+}
+
+.pet-details-info {
+  margin-left: 0px;
+}
+
+.pet-details-small {
+  position: absolute;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.pet-details-info-small {
+  margin-top: 480px;
+  margin-left: 45px;
+  margin-bottom: 50px;
+  margin-right: 37px;
+  position: relative;
+
+}
+
+.pet-details-img {
+  border: solid black 5px;
+}
+
+.pet-details-name {
+  font-size: 52px;
+  margin-bottom: 0;
+}
+
+.pet-description {
+  font-family: Abel;
+  text-align: justify;
+  font-size: 14px;
+  margin-top: 5px;
+  border: solid black 5px;
+  padding: 5px;
+}
+
+.pet-details-additional {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+

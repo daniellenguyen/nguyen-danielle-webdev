@@ -13,8 +13,7 @@
       var promise = SearchService.simpleSearch(vm.zipCode, vm.petType);
 
       promise.then(function (response) {
-        vm.pets = response.data; //flattenList(response.data.petfinder.pets.pet);
-        console.log(vm.pets);
+        vm.pets = response.data;
         vm.concisePetList = makeConcisePetList();
       });
     }
@@ -32,12 +31,11 @@
         finalList.push(pet);
       }
       console.log(finalList);
-      console.log(vm.pets);
       return finalList;
     }
 
     function toPetDetails(petId) {
-
+      $location.url("/search/pets/" + petId);
     }
   }
 
