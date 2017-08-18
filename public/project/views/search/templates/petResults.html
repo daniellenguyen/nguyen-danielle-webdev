@@ -1,4 +1,22 @@
 <div class="container-fluid" ng-controller="PetResultsController">
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-text pull-right">
+      <a ng-show="!model.isUserLoggedIn"
+         ng-click="">Login</a>
+    </div>
+    <div class="navbar-text pull-right">
+      <a ng-show="!model.isUserLoggedIn"
+         ng-click="">Register</a>
+    </div>
+    <div class="navbar-text pull-right">
+      <a ng-show="model.isUserLoggedIn"
+         ng-click="">Profile</a>
+    </div>
+    <div class="navbar-text pull-right">
+      <a ng-show="model.isUserLoggedIn"
+         ng-click="">Logout</a>
+    </div>
+  </div>
   <h1 class="petResultsHeading">Results</h1>
   <div class="petResult" ng-repeat="pet in model.concisePetList">
     <h2 class="petResultsNames" ng-click=model.toPetDetails(pet["id"])>

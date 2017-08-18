@@ -54,5 +54,15 @@
         controller: "VolunteerController",
         controllerAs: "model"
       })
+      .when("/register", {
+        templateUrl: "views/users/templates/register.html",
+        controller: "RegisterController",
+        controllerAs: "model"
+      })
+      .when("/login", {
+        templateUrl: "views/users/templates/login.html",
+        controller: "LoginController",
+        controllerAs: "model"
+      })
   }
 })();

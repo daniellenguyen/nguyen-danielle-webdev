@@ -7,6 +7,7 @@
     var vm = this;
     vm.petId = $routeParams["petId"];
     vm.carouselHelper = carouselHelper;
+    vm.isUserLoggedIn = false;
 
     function init() {
       var promise = SearchService.getSinglePet(vm.petId);
@@ -14,7 +15,7 @@
       promise.then(function (response) {
         vm.pet = response.data;
         vm.age = vm.pet.age;
-        vm.breed = vm.pet.breeds.breed;
+        vm.breed = vm.pet.breeds.breed[0];
         vm.email = vm.pet.contact.email;
         vm.phone = vm.pet.contact.phone;
         vm.description = vm.pet.description;
@@ -29,7 +30,7 @@
       });
     }
 
-    init()
+    init();
 
     function prettifyStatus() {
       if(vm.pet.status === 'A') {

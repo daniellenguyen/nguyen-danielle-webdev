@@ -8,6 +8,7 @@
     vm.zipCode = $routeParams["zipCode"];
     vm.petType = $routeParams["petType"];
     vm.toPetDetails = toPetDetails;
+    vm.isUserLoggedIn = false;
 
     function init() {
       var promise = SearchService.simpleSearch(vm.zipCode, vm.petType);

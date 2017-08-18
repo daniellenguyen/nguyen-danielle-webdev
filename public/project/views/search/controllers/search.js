@@ -10,6 +10,7 @@
     vm.simpleSearch = simpleSearch;
     vm.toAdvancedSearch = toAdvancedSearch;
     vm.getRandomPet = getRandomPet;
+    vm.isUserLoggedIn = false;
     vm.petTypes = [
       "any",
       "dog",

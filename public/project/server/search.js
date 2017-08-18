@@ -11,8 +11,6 @@ var key = process.env.PETFINDER_API_KEY;
 app.get("/api/petfinder/:zipCode/:petType", simpleSearch);
 app.get("/api/petfinder/:petId", getSinglePet);
 
-//var serverPetList = [];
-
 function simpleSearch(req, res) {
   var zipCode = req.params.zipCode;
   var petType = req.params.petType;
@@ -59,6 +57,7 @@ function flattenObj(obj) {
         flatObj[key] = value;
       }
       else if (key === 'media') {
+        //console.log(obj.media.photos["photo"]);
         flatObj[key] = flattenPhotos(obj.media.photos.photo);
       }
       else {

@@ -55,14 +55,18 @@ body {
   border: 7px solid black;
 }
 
-/*#border-top-bottom {*/
-/*top: 0;*/
-/*bottom: 0;*/
-/*right: 0;*/
-/*left: 0;*/
-/*position: fixed;*/
-/*border: 12px solid black;*/
-/*}*/
+.navbar {
+  background-color: black;
+  border: none;
+}
+
+.navbar-text {
+  margin-right: 20px;
+  color: white;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  font-size: 30px;
+}
 
 #footer-separator {
   margin-bottom: 40px;
@@ -81,7 +85,9 @@ body {
 
 .search-image {
   display: block;
-  margin: 0 auto;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-control {
@@ -142,6 +148,7 @@ a, a:focus, a:hover {
   color: black;
   text-align: center;
   font-size: 52px;
+  margin-top: 50px;
 }
 
 .petResultsNames {
@@ -177,15 +184,23 @@ a, a:focus, a:hover {
 
 }
 
-#myCarousel {
+#carousel-regular {
   position: absolute;
   margin-left: 30px;
   margin-right: 30px;
-  /*margin-bottom: 15px;*/
+  margin-top: 36px;
+}
+
+#carousel-small {
+  position: absolute;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 70px;
 }
 
 .pet-details-info {
-  margin-left: 0px;
+  margin-left: 0;
+  margin-top: 39px;
 }
 
 .pet-details-small {
@@ -195,12 +210,10 @@ a, a:focus, a:hover {
 }
 
 .pet-details-info-small {
-  margin-top: 480px;
   margin-left: 45px;
-  margin-bottom: 50px;
   margin-right: 37px;
   position: relative;
-
+  max-width: 480px;
 }
 
 .pet-details-img {
@@ -218,7 +231,7 @@ a, a:focus, a:hover {
   font-size: 14px;
   margin-top: 5px;
   border: solid black 5px;
-  padding: 5px;
+  padding: 10px;
 }
 
 .pet-details-additional {
@@ -226,6 +239,25 @@ a, a:focus, a:hover {
   margin-bottom: 2px;
   padding-right: 2px;
   padding-left: 2px;
+  text-align: justify;
+}
+
+.pet-details-save {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-right: 2px;
+  padding-left: 2px;
+  text-align: justify;
+}
+
+.pet-details-heart {
+  margin-top: 60px;
+  color: black;
+  font-size: 25px;
+}
+
+a:hover > .glyphicon-heart-empty {
+  color: red;
 }
 
 

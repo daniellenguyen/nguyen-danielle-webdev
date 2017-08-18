@@ -1,12 +1,30 @@
 <div class="container-fluid" ng-controller="PetDetailsController">
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-text pull-right">
+      <a ng-show="!model.isUserLoggedIn"
+         ng-click="">Login</a>
+    </div>
+    <div class="navbar-text pull-right">
+      <a ng-show="!model.isUserLoggedIn"
+         ng-click="">Register</a>
+    </div>
+    <div class="navbar-text pull-right">
+      <a ng-show="model.isUserLoggedIn"
+         ng-click="">Profile</a>
+    </div>
+    <div class="navbar-text pull-right">
+      <a ng-show="model.isUserLoggedIn"
+         ng-click="">Logout</a>
+    </div>
+  </div>
   <div class="row pet-details-small"></div>
   <div class="col-md-6 hidden-xs visible-md-block visible-lg-block">
     <div class="row">
       <!--Carousel-->
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div id="carousel-regular" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-          <li data-target="#myCarousel"
+          <li data-target="#carousel-regular"
               ng-repeat="photo in model.photos"
               ng-class="{active: ($index === 0)}"
               data-slide-to="{{$index}}">
@@ -20,65 +38,20 @@
           </div>
         </div>
       </div>
-      <!--<div class="visible-xs-block visible-sm-block-->
-    <!--hidden-md hidden-lg pet-details-info-small">-->
-        <!--<div class="row">-->
-          <!--<h1 class="pet-details-name">-->
-            <!--{{model.name}}-->
-          <!--</h1>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-          <!--<h2 class="pet-details-additional">A-->
-            <!--{{model.size}}-->
-            <!--{{model.age}}-->
-            <!--{{model.breed}}-->
-            <!--{{model.sex}}-->
-            <!--{{model.status}}-->
-          <!--</h2>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-          <!--<h2 class="pet-details-additional">-->
-            <!--{{model.details}}-->
-          <!--</h2>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-          <!--<p class="pet-description">{{model.description}}</p>-->
-        <!--</div>-->
-      <!--</div>-->
     </div>
-    <!--<div class="row">-->
-      <!--&lt;!&ndash;<div class="row-xs-6 visible-xs-block visible-sm-block-->
-    <!--hidden-md hidden-lg pet-details-info-small">-->
-        <!--<div class="row">-->
-          <!--<h1 class="pet-details-name">-->
-            <!--{{model.name}}-->
-          <!--</h1>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-          <!--<h2 class="pet-details-additional">A-->
-            <!--{{model.size}}-->
-            <!--{{model.age}}-->
-            <!--{{model.breed}}-->
-            <!--{{model.sex}}-->
-            <!--{{model.status}}-->
-          <!--</h2>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-          <!--<h2 class="pet-details-additional">-->
-            <!--{{model.details}}-->
-          <!--</h2>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-          <!--<p class="pet-description">{{model.description}}</p>-->
-        <!--</div>-->
-      <!--</div>&ndash;&gt;-->
-    <!--</div>-->
   </div>
   <div class="col-md-6 hidden-xs visible-md-block visible-lg-block pet-details-info">
     <div class="row">
       <h1 class="pet-details-name">
         {{model.name}}
       </h1>
+    </div>
+    <div class="row">
+      <h2 class="pet-details-save">Save
+        <a class="pet-details-heart" ng-click="">
+          <span class="glyphicon glyphicon-heart-empty"></span>
+        </a>
+      </h2>
     </div>
     <div class="row">
       <h2 class="pet-details-additional">A
@@ -96,6 +69,63 @@
     </div>
     <div class="row">
       <p class="pet-description">{{model.description}}</p>
+    </div>
+  </div>
+  <div class="col-md-6 visible-xs-block visible-sm-block hidden-md hidden-lg pet-details-info">
+    <div class="row">
+      <div class="row-xs-6 visible-xs-block visible-sm-block
+    hidden-md hidden-lg pet-details-info-small">
+        <div class="row">
+          <h1 class="pet-details-name">
+            {{model.name}}
+          </h1>
+        </div>
+        <div class="row">
+          <h2 class="pet-details-save">Save
+            <a class="pet-details-heart" ng-click="">
+              <span data-target="#exampleModalLabel" class="glyphicon glyphicon-heart-empty"></span>
+            </a>
+          </h2>
+        </div>
+        <div class="row">
+          <h2 class="pet-details-additional">A
+            {{model.size}}
+            {{model.age}}
+            {{model.breed}}
+            {{model.sex}}
+            {{model.status}}
+          </h2>
+        </div>
+        <div class="row">
+          <h2 class="pet-details-additional">
+            {{model.details}}
+          </h2>
+        </div>
+        <div class="row">
+          <p class="pet-description">{{model.description}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!--Carousel-->
+      <div id="carousel-small" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-small"
+              ng-repeat="photo in model.photos"
+              ng-class="{active: ($index === 0)}"
+              data-slide-to="{{$index}}">
+          </li>
+        </ol>
+        <div class="carousel-inner">
+          <div ng-repeat="photo in model.photos"
+               ng-class="{item: true, active: ($index === 0)}"
+               ng-style="{'background-image': url(photo)}">
+            <img class="pet-details-img" ng-src="{{photo}}" alt="a cute animal photo <3">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

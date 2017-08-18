@@ -1,6 +1,24 @@
 <div class="container-fluid" ng-controller="SearchController">
   <div id="border-left-right"></div>
   <div id="border-top-bottom"></div>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-text pull-right">
+      <a ng-show="!model.isUserLoggedIn"
+         ng-click="">Login</a>
+    </div>
+    <div class="navbar-text pull-right">
+      <a ng-show="!model.isUserLoggedIn"
+         ng-click="">Register</a>
+    </div>
+    <div class="navbar-text pull-right">
+      <a ng-show="model.isUserLoggedIn"
+         ng-click="">Profile</a>
+    </div>
+    <div class="navbar-text pull-right">
+      <a ng-show="model.isUserLoggedIn"
+         ng-click="">Logout</a>
+    </div>
+  </div>
   <div class="row">
     <img class="search-image"
          ng-src={{model.getRandomFromList()}}
@@ -45,11 +63,11 @@
     </div>
   </div>
   <footer class="footer navbar-fixed-bottom">
-      <div class="col-xs-4 col-xs-offset-3">
-        <a href="diagram.png">Link to class diagram</a>
-      </div>
-      <div class="col-xs-4">
-        <a href="poc/index.html">Link to proof of concept</a>
-      </div>
+    <div class="col-xs-4 col-xs-offset-3">
+      <a href="diagram.png">Link to class diagram</a>
+    </div>
+    <div class="col-xs-4">
+      <a href="poc/index.html">Link to proof of concept</a>
+    </div>
   </footer>
 </div>
