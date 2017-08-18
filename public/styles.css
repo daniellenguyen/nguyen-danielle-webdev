@@ -1,0 +1,58 @@
+body {
+  background-image: url("background.jpg");
+  background-size: 300px 400px;
+  background-repeat: repeat;
+}
+
+@font-face {
+  font-family: 'Amatic'; /*a name to be used later*/
+  src: url("./project/fonts/Amatic-Bold.ttf"); /*URL to font*/
+}
+
+.overlay-card {
+  width: 60%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  background: white;
+  border: solid 5px black;
+}
+
+.overlay-card-header {
+  font-family: Amatic;
+  text-align: center;
+  font-size: 55px;
+}
+
+.overlay-card-text {
+  font-family: Amatic;
+  font-size: 30px;
+  text-align: center;
+  color: cadetblue;
+  margin-top: 0;
+}
+
+.overlay-card-links {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.overlay-card-link {
+  font-family: Amatic;
+  font-size: 22px;
+  text-decoration: none;
+  color: black;
+  border: solid black 2px;
+  padding: 5px 20px 5px 20px;
+  /*padding-bottom: 5px;*/
+  /*padding-left: 20px;*/
+  /*padding-right: 20px;*/
+  margin-right: 20px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+/*.overlay-card-link-leftmost {*/
+  /*margin-left: 10%;*/
+/*}*/
