@@ -6,6 +6,7 @@ var userSchema = mongoose.Schema({
   firstName: String,
   type: String,
   pets: [],
+  shelterId: String,
   dateCreated: {type: Date, default: Date.now}
 }, {collection: "user"});
 

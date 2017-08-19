@@ -8,7 +8,8 @@
       "findUserById": findUserById,
       "findUserByCredentials": findUserByCredentials,
       "updateUser": updateUser,
-      "deleteUser": deleteUser
+      "deleteUser": deleteUser,
+      "getAllUsers": getAllUsers
     };
     return api;
 
@@ -35,6 +36,11 @@
     function deleteUser(userId) {
       var url = "/api/user/" + userId;
       return $http.delete(url);
+    }
+
+    function getAllUsers() {
+      var url = "/api/user/all";
+      return $http.get(url);
     }
   }
 })();

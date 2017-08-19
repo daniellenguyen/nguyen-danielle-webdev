@@ -6,6 +6,7 @@ userModel.findUserById = findUserById;
 userModel.findUserByCredentials = findUserByCredentials;
 userModel.updateUser = updateUser;
 userModel.deleteUser = deleteUser;
+userModel.findAllUsers = findAllUsers;
 userModel.addPet = addPet;
 userModel.removePet = removePet;
 module.exports = userModel;
@@ -29,6 +30,10 @@ function updateUser(userId, user) {
 
 function deleteUser(userId) {
   return userModel.findOneAndRemove({_id: userId});
+}
+
+function findAllUsers() {
+  return userModel.find();
 }
 
 function addPet(userId, petId) {

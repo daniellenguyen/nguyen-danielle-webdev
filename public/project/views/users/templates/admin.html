@@ -1,0 +1,21 @@
+<div class="container-fluid" ng-controller="AdminController">
+  <div id="border-left-right"></div>
+  <div id="border-top-bottom"></div>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-text pull-right">
+      <a ng-click="model.toSearch()">Logout</a>
+    </div>
+  </div>
+  <div class="row">
+    <h1 class="register-login-heading">
+      Users List
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="user in model.userList">{{user.firstName}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

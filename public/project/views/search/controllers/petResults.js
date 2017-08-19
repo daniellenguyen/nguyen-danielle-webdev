@@ -8,8 +8,8 @@
     vm.zipCode = $routeParams["zipCode"];
     vm.petType = $routeParams["petType"];
     vm.toPetDetails = toPetDetails;
-    vm.toRegister = toRegister();
-    vm.toLogin = toLogin();
+    vm.toRegister = toRegister;
+    vm.toLogin = toLogin;
     vm.isUserLoggedIn = false;
 
     function init() {

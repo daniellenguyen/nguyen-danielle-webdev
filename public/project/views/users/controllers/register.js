@@ -45,19 +45,24 @@
         password: vm.password,
         firstName: vm.firstName,
         type: vm.userType,
-        pets: []
+        pets: [],
+        shelterId: vm.shelterId
       };
-
-      var promise = UserService.createUser(user);
-      promise.then(function(response) {
-        user = response.data;
-        if (user.type === "Adopter") {
-          $location.url("/adopter/" + user._id);
-        }
-        else {
-          $location.url("/volunteer/" + user._id);
-        }
-      });
+      if (username === 'admin' && password === 'admin') {
+        $location.url("/admin");
+      }
+      else {
+        var promise = UserService.createUser(user);
+        promise.then(function (response) {
+          user = response.data;
+          if (user.type === "Adopter") {
+            $location.url("/adopter/" + user._id);
+          }
+          else {
+            $location.url("/volunteer/" + user._id);
+          }
+        });
+      }
     }
 
     function toSearch() {

@@ -1,0 +1,41 @@
+<div class="container-fluid" ng-controller="VolunteerController">
+  <div id="border-left-right"></div>
+  <div id="border-top-bottom"></div>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-text pull-right">
+      <a ng-click="model.toSearch()">Logout</a>
+    </div>
+  </div>
+  <div class="row">
+    <h1 class="register-login-heading">
+      Volunteer Profile
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <input placeholder="First Name"
+             ng-model="model.firstName"
+             class="form-control register-login-fields"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <input placeholder="Username"
+             ng-model="model.username"
+             class="form-control register-login-fields"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <input placeholder="Shelter Id"
+             type="text"
+             ng-model="model.shelterId"
+             class="form-control register-login-fields"/>
+    </div>
+  </div>
+  <div class="row">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="message in model.messageList">{{message}}</li>
+    </ul>
+  </div>
+</div>
