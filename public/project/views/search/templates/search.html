@@ -4,19 +4,15 @@
   <div class="navbar navbar-fixed-top">
     <div class="navbar-text pull-right">
       <a ng-show="!model.isUserLoggedIn"
-         ng-click="">Login</a>
+         ng-click="model.toLogin()">Login</a>
     </div>
     <div class="navbar-text pull-right">
       <a ng-show="!model.isUserLoggedIn"
-         ng-click="">Register</a>
+         ng-click="model.toRegister()">Register</a>
     </div>
     <div class="navbar-text pull-right">
       <a ng-show="model.isUserLoggedIn"
-         ng-click="">Profile</a>
-    </div>
-    <div class="navbar-text pull-right">
-      <a ng-show="model.isUserLoggedIn"
-         ng-click="">Logout</a>
+         ng-click="model.toProfile()">Profile</a>
     </div>
   </div>
   <div class="row">
@@ -47,7 +43,7 @@
   <br>
   <div class="row">
     <div class="search-inputs col-sm-4">
-      <a ng-click="model.toAdvancedSearch()" class="search-button btn btn-block">
+      <a ng-click="" class="search-button btn btn-block">
         Can I be more specific?
       </a>
     </div>

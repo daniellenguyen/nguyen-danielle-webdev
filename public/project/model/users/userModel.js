@@ -1,14 +1,13 @@
 var mongoose = require("mongoose");
-var userSchema = require("./user.schema.server");
+var userSchema = require("./userSchema.js");
 var userModel = mongoose.model("UserModel", userSchema);
 userModel.createUser = createUser;
 userModel.findUserById = findUserById;
-userModel.findUserByUsername = findUserByUsername;
 userModel.findUserByCredentials = findUserByCredentials;
 userModel.updateUser = updateUser;
 userModel.deleteUser = deleteUser;
-userModel.addWebsite = addWebsite;
-userModel.removeWebsite = removeWebsite;
+userModel.addPet = addPet;
+userModel.removePet = removePet;
 module.exports = userModel;
 
 function createUser(user) {
@@ -17,10 +16,6 @@ function createUser(user) {
 
 function findUserById(userId) {
   return userModel.findById(userId);
-}
-
-function findUserByUsername(username) {
-  return userModel.findOne({ username: username });
 }
 
 function findUserByCredentials(username, password) {
@@ -36,20 +31,20 @@ function deleteUser(userId) {
   return userModel.findOneAndRemove({_id: userId});
 }
 
-function addWebsite(userId, websiteId) {
+function addPet(userId, petId) {
   return userModel
     .findById(userId)
     .then(function (user) {
-      user.websites.push(websiteId);
+      user.websites.push(petId);
       return user.save();
     });
 }
 
-function removeWebsite(userId, websiteId) {
+function removePet(userId, petId) {
   return userModel
     .findById(userId)
     .then(function (user) {
-      var index = user.websites.indexOf(websiteId);
+      var index = user.pets.indexOf(petId);
       user.websites.splice(index, 1);
       return user.save();
     });

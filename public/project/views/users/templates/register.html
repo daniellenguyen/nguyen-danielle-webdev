@@ -1,0 +1,68 @@
+<div class="container-fluid" ng-controller="RegisterController">
+  <div id="border-left-right"></div>
+  <div id="border-top-bottom"></div>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-text pull-right">
+      <a ng-click="model.toLogin()">Login</a>
+    </div>
+  </div>
+  <div class="row">
+    <h1 class="register-login-heading">
+      Register
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <input placeholder="First Name"
+             ng-model="model.firstName"
+             class="form-control register-login-fields"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <input placeholder="Username"
+             ng-model="model.username"
+             class="form-control register-login-fields"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <input placeholder="Password"
+             type="password"
+             ng-model="model.password"
+             class="form-control register-login-fields"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="search-inputs col-xs-8">
+      <select id="search-dropdown"
+              ng-model="userType"
+              ng-options="userType for userType in model.userTypes"
+              ng-change="model.selectType(userType)"
+              class="form-control register-login-fields">
+        <option value="">User Type</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <input placeholder="Shelter ID"
+             type="text"
+             ng-model="model.shelterId"
+             ng-show="model.showShelterInput"
+             class="form-control register-login-fields"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <a ng-click="model.toProfile()" class="search-button btn btn-block register-login-buttons">
+        Register
+      </a>
+    </div>
+    <div id="footer-separator" class="col-xs-4">
+      <a ng-click="model.toSearch()" class="search-button btn btn-block register-login-buttons">
+        Never mind
+      </a>
+    </div>
+  </div>
+</div>

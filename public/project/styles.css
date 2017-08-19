@@ -260,4 +260,22 @@ a:hover > .glyphicon-heart-empty {
   color: red;
 }
 
+.register-login-heading {
+  margin-top: 70px;
+  margin-left: 40px;
+  font-size: 45px;
+}
+
+.register-login-fields {
+  margin: 10px 0px 10px 25px;
+}
+
+.register-login-buttons {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  margin-left: 25px;
+}
+
+
 

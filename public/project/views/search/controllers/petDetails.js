@@ -7,6 +7,8 @@
     var vm = this;
     vm.petId = $routeParams["petId"];
     vm.carouselHelper = carouselHelper;
+    vm.toRegister = toRegister;
+    vm.toLogin = toLogin;
     vm.isUserLoggedIn = false;
 
     function init() {
@@ -108,6 +110,15 @@
         return "item";
       }
     }
+
+    function toRegister() {
+      $location.url("/register");
+    }
+
+    function toLogin() {
+      $location.url("/login");
+    }
+
 
   }
 

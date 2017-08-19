@@ -12,3 +12,5 @@ var mongoose = require("mongoose");
 var db = mongoose.connect(connectionString, { useMongoClient: true });
 mongoose.Promise = q.Promise;
 module.exports = db;
+
+//require("./public/project/model/users/userModel.js");

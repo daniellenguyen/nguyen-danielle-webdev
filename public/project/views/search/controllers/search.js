@@ -5,11 +5,15 @@
 
   function SearchController($location, $routeParams, SearchService) {
     var vm = this;
+    vm.user = '';
     vm.getRandomFromList = getRandomFromList;
     vm.selectType = selectType;
     vm.simpleSearch = simpleSearch;
-    vm.toAdvancedSearch = toAdvancedSearch;
     vm.getRandomPet = getRandomPet;
+    vm.toRegister = toRegister;
+    vm.toLogin = toLogin;
+    vm.toProfile = toProfile;
+    vm.toLogout = toLogout;
     vm.isUserLoggedIn = false;
     vm.petTypes = [
       "any",
@@ -41,11 +45,6 @@
       vm.petType = petType;
     }
 
-    function toAdvancedSearch() {
-      $location.url("/search/advanced");
-      // shelter search will happen here
-    }
-
     function simpleSearch() {
       $location.url("/search/pets/" + vm.zipCode + "/" + vm.petType);
     }
@@ -58,43 +57,30 @@
       });
     }
 
-    /**
-     * Methods needed for search:
-     * breed.list
-     * pet.getRandom
-     * pet.find
-     *
-     * Pet search will go like this:
-     * The main landing page will have 2 fields:
-     * - zipcode
-     * - type of animal
-     * and three buttons:
-     * - Just plain ol' search, which will search on zip code and type alone
-     * - Can I be more specific?, which will take you to advanced search
-     * - I'm feeling lucky, which will get pet.getRandom
-     */
+    function toRegister() {
+      $location.url("/register");
+    }
 
-    /**
-     * Search
-     */
+    function toLogin() {
+      $location.url("/login");
+    }
 
-    // function login(user) {
-    //   if(!user) {
-    //     vm.errorMessage = "User not found";
-    //     return;
-    //   }
-    //   var promise = SearchService.findUserByCredentials(user.username, user.password);
-    //   promise.then(function(response) {
-    //     user = response.data;
-    //     if (!user) {
-    //       vm.errorMessage = "User not found";
-    //     }
-    //     else {
-    //       $routeParams.user = user;
-    //       $location.url("/user/" + user._id);
-    //     }
-    //   });
-    // }
+    function toProfile() {
+      if (vm.user.type === 'adopter') {
+        $location.url("/adopter");
+      }
+      else if (vm.user.type === 'volunteer') {
+        $location.url("/volunteer");
+      }
+      else {
+        $location.url("/admin");
+      }
+    }
+
+    function toLogout() {
+      vm.isUserLoggedIn = false;
+      $location.url("/");
+    }
 
   }
 

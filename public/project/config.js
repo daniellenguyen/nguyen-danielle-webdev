@@ -14,11 +14,6 @@
         controller: "SearchController",
         controllerAs: "model"
       })
-      .when("/search/advanced", {
-        templateUrl: "views/search/templates/advancedSearch.html",
-        controller: "SearchController",
-        controllerAs: "model"
-      })
       .when("/search/pets/:zipCode/:petType", {
         templateUrl: "views/search/templates/petResults.html",
         controller: "PetResultsController",
@@ -44,12 +39,12 @@
         controller: "AdminController",
         controllerAs: "model"
       })
-      .when("/adopter", {
+      .when("/adopter/:userId", {
         templateUrl: "views/users/templates/adopter.html",
         controller: "AdopterController",
         controllerAs: "model"
       })
-      .when("/volunteer", {
+      .when("/volunteer/:userId", {
         templateUrl: "views/users/templates/volunteer.html",
         controller: "VolunteerController",
         controllerAs: "model"

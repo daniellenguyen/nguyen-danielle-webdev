@@ -8,6 +8,8 @@
     vm.zipCode = $routeParams["zipCode"];
     vm.petType = $routeParams["petType"];
     vm.toPetDetails = toPetDetails;
+    vm.toRegister = toRegister();
+    vm.toLogin = toLogin();
     vm.isUserLoggedIn = false;
 
     function init() {
@@ -38,6 +40,15 @@
     function toPetDetails(petId) {
       $location.url("/search/pets/" + petId);
     }
+
+    function toRegister() {
+      $location.url("/register");
+    }
+
+    function toLogin() {
+      $location.url("/login");
+    }
+
   }
 
 })();

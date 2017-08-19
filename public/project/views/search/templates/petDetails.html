@@ -2,19 +2,19 @@
   <div class="navbar navbar-fixed-top">
     <div class="navbar-text pull-right">
       <a ng-show="!model.isUserLoggedIn"
-         ng-click="">Login</a>
+         ng-click="model.toLogin">Login</a>
     </div>
     <div class="navbar-text pull-right">
       <a ng-show="!model.isUserLoggedIn"
-         ng-click="">Register</a>
+         ng-click="model.toRegister()">Register</a>
     </div>
     <div class="navbar-text pull-right">
       <a ng-show="model.isUserLoggedIn"
-         ng-click="">Profile</a>
+         ng-click="model.toProfile()">Profile</a>
     </div>
     <div class="navbar-text pull-right">
       <a ng-show="model.isUserLoggedIn"
-         ng-click="">Logout</a>
+         ng-click="model.toSearch()">Logout</a>
     </div>
   </div>
   <div class="row pet-details-small"></div>

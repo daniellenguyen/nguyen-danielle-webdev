@@ -1,0 +1,41 @@
+<div class="container-fluid" ng-controller="LoginController">
+  <div id="border-left-right"></div>
+  <div id="border-top-bottom"></div>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-text pull-right">
+      <a ng-click="model.toRegister()">Register</a>
+    </div>
+  </div>
+  <div class="row">
+    <h1 class="register-login-heading">
+      Login
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <input placeholder="Username"
+             ng-model="model.username"
+             class="form-control register-login-fields"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <input placeholder="Password"
+             type="password"
+             ng-model="model.password"
+             class="form-control register-login-fields"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <a ng-click="model.toProfile()" class="search-button btn btn-block register-login-buttons">
+        Login
+      </a>
+    </div>
+    <div id="footer-separator" class="col-xs-4">
+      <a ng-click="model.toSearch()" class="search-button btn btn-block register-login-buttons">
+        Never mind
+      </a>
+    </div>
+  </div>
+</div>
