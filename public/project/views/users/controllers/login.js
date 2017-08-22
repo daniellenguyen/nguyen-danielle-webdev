@@ -31,7 +31,7 @@
         $location.url("/admin");
       }
       else {
-        var promise = UserService.findUserByCredentials(username, password);
+        var promise = UserService.findUserByCredentials(vm.username, vm.password);
         promise.then(function (response) {
           user = response.data;
           if (user.type === "Adopter") {
