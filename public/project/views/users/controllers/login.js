@@ -27,7 +27,7 @@
     }
 
     function toProfile() {
-      if (username === 'admin' && password === 'admin') {
+      if (vm.username === 'admin' && vm.password === 'admin') {
         $location.url("/admin");
       }
       else {

@@ -7,7 +7,7 @@ module.exports = {
   3: findUserByCredentials,
   4: updateUser,
   5: deleteUser,
-  6: findAllUsers
+  6: getAllUsers
 };
 
 // http handlers
@@ -16,7 +16,7 @@ app.get("/api/user", findUserByCredentials);
 app.get("/api/user/:uid", findUserById);
 app.put("/api/user/:uid", updateUser);
 app.delete("/api/user/:uid", deleteUser);
-app.get("/api/user/all", findAllUsers);
+app.get("/api/user/all", getAllUsers);
 
 function createUser(request, response) {
   var user = request.body;
@@ -65,8 +65,8 @@ function deleteUser(request, response) {
     });
 }
 
-function findAllUsers(request, response) {
-  userModel.findAllUsers().then(function(users) {
+function getAllUsers(request, response) {
+  userModel.getAllUsers().then(function(users) {
     response.json(users);
   });
 }

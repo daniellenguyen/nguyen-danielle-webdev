@@ -39,7 +39,6 @@
     }
 
     function toProfile() {
-      console.log('hello');
       var user = {
         username: vm.username,
         password: vm.password,
@@ -48,7 +47,7 @@
         pets: [],
         shelterId: vm.shelterId
       };
-      if (username === 'admin' && password === 'admin') {
+      if (user.username === 'admin' && user.password === 'admin') {
         $location.url("/admin");
       }
       else {

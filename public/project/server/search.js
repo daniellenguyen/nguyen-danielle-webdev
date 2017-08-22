@@ -57,8 +57,10 @@ function flattenObj(obj) {
         flatObj[key] = value;
       }
       else if (key === 'media') {
-        //console.log(obj.media.photos["photo"]);
-        flatObj[key] = flattenPhotos(obj.media.photos.photo);
+        if (obj.media.photos !== undefined) {
+          //console.log(obj.media.photos);
+          flatObj[key] = flattenPhotos(obj.media.photos.photo);
+        }
       }
       else {
         flatObj[key] = flattenObj(obj[key]);

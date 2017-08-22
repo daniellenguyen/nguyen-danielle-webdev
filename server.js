@@ -10,7 +10,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
 
-require("./assignment/app.js");
+//require("./assignment/app.js"); // assignment server
+require("./public/project/server/users.js");
 require("./database.js");
 //require("./public/project/poc/server.js"); // proof of concept server
 require("./public/project/server/search.js");

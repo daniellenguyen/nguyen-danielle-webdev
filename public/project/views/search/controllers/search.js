@@ -46,7 +46,9 @@
     }
 
     function simpleSearch() {
-      $location.url("/search/pets/" + vm.zipCode + "/" + vm.petType);
+      if (vm.zipCode !== null && vm.petType) {
+        $location.url("/search/pets/" + vm.zipCode + "/" + vm.petType);
+      }
     }
 
     function getRandomPet() {

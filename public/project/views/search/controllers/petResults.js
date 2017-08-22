@@ -1,4 +1,4 @@
-(function() {
+(function () {
   angular
     .module("PetWebsite")
     .controller("PetResultsController", PetResultsController);
@@ -26,14 +26,15 @@
     function makeConcisePetList() {
       var finalList = [];
       for (var i = 0; i < vm.pets.length; i++) {
-        var pet = {
-          name: vm.pets[i]["name"],
-          photo: vm.pets[i]["media"][0],
-          id: vm.pets[i]["id"]
-        };
-        finalList.push(pet);
+        if (vm.pets[i]["media"] !== undefined) {
+          var pet = {
+            name: vm.pets[i]["name"],
+            photo: vm.pets[i]["media"][0],
+            id: vm.pets[i]["id"]
+          };
+          finalList.push(pet);
+        }
       }
-      console.log(finalList);
       return finalList;
     }
 
