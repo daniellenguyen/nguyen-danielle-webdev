@@ -16,7 +16,7 @@
     vm.toLogout = toLogout;
     vm.isUserLoggedIn = false;
     vm.petTypes = [
-      "any",
+      //"any",
       "dog",
       "cat",
       "rabbit",
